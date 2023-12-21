@@ -1,0 +1,210 @@
+/* svg{
+    stroke-width: 2px;
+} */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    max-height: 80px;
+    z-index: 444;
+    /* background:#212121; */
+    color : #fff;
+    transition: all 0.2s ease;
+}
+
+.header.black {
+    /* background : #ffffff30 ; */
+    /* border-bottom: 1px solid linear-gradient(to bottom , #fff , transparent); */
+    /* background: linear-gradient(to bottom,#fff,#fffffff2,#ffffffe5 ,#ffffffd6, #ffffffc1 ,#ffffffb8,#ffffff5a  , transparent) ; */
+    /* border: none; */
+    height: 60px ;
+    background-color: #000000b9;
+}
+
+.white nav .nav-menu ul li .menu-link{
+    color : #fff;
+}
+
+.header.black nav .nav-menu ul li .menu-link{
+   color: #fff !important;
+   font-weight: 900;
+}
+
+
+
+.header.black .social-media-header .social-media-icons{
+    color: #fff;
+}
+
+/* .header.black nav .nav-menu ul li .menu-link:hover{
+    color: #fff;
+    font-weight: 900;
+    opacity: 1;
+ } */
+
+/* .header.black .logo{
+   color:#000;
+}
+.header.black .social-media-header{
+    color: #000;
+    opacity: 0.5;
+} */
+.social-media-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-media-header .social-media-icons {
+    margin-left: 10px;
+    font-size: 1.3rem;
+    margin-right: 10px;
+    color: inherit;
+}
+.logo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    width: 200px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.logo > svg{
+    height: 100%;
+    width: 100%;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: inherit;
+}
+
+.header .nav-menu {
+    width: 500px;
+}
+
+nav .nav-menu ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    
+}
+
+nav .nav-menu ul li .menu-link{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: inherit;
+    transition: all 0.5s ease-in-out;
+
+}
+
+/* nav .nav-menu ul li .menu-link:hover{
+    opacity: 0.7;
+} */
+
+.header nav .burger-btn{
+ display: none;
+}
+
+@media only screen and (max-width:1024px) {
+    .header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .header.black {
+        background : #ffffff60 ;
+        height: 80px ;
+    }
+    
+    .header.black nav .nav-menu ul li .menu-link{
+       color: #fff;
+       font-weight: 600;
+    }
+    
+    
+
+    .header-container{
+        margin-inline: 1.5rem;
+    }
+
+    .header nav{
+        justify-content: space-between;
+    }
+    .header nav .burger-btn{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        outline: none;
+        color : #fff;
+        font-size: 1.7rem;
+        transition: opacity .2s transform .4s;
+        
+    }
+    
+    .header .nav-menu {
+        position: absolute;
+        top:4.1rem;
+        left: 0;
+        width: 100%;
+        /* background: #000000c9; */
+        height: 100vh;
+        overflow: auto;
+        pointer-events: none;
+        opacity: 0;
+        transition: top .4s , opacity .3s;
+    }
+    .header .nav-menu::-webkit-scrollbar{
+        width: 0;
+    }
+    .header nav .nav-menu ul{
+        display: block;
+        height: calc(100vh-3.5rem);
+        background-color: #000000d0;
+        padding-top: 1rem ;
+    }
+    .header nav .nav-menu ul li .menu-link{
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color .3s;
+    }
+    .header nav .nav-menu ul li .menu-link:hover{
+        background-color: #f6f6f69e;
+    }
+
+    .nav-menu.responsive-nav{
+        pointer-events: initial;
+        opacity: 1;
+        top:5rem;
+    }
+    
+}
+
+@media only screen and (max-width:430px) {
+
+
+}

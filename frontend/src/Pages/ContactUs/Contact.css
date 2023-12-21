@@ -1,0 +1,189 @@
+.Contact-section{
+    padding: 100px 20px;
+    background-color: #FBFBFB;
+    position: relative;
+    
+}
+.Contact-container{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.contact-header{
+    position: relative;
+    height: 100%;
+}
+.contact-header h1{
+    font-size: 3rem;
+    color: #0000005f;
+    text-align: center;
+}
+.contact-header h3{
+    color: #000;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.contact-info{
+    position: relative;
+    margin:50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+.contact-info > div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.info_1 h3 , .info_2 h3 , .info_3 p{
+    margin-top: 30px;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 100%;
+    color: #000;
+}
+
+.contact-form form{
+    position: relative;
+    height: 100%;
+    margin-top: 40px;
+}
+.contact-form form{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact-form-1,.contact-form-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.contact-form-1 .input-form{
+    padding: 20px 5px;
+    width: 90%;
+    border: 1px solid #21212176;
+    font-size: 1rem ;
+    border-radius: 2px;
+    
+}
+.contact-form-2 textarea{
+    border-radius: 2px;
+    margin-bottom: 40px;
+    width: 95%;
+    padding: 10px 5px;
+    height: 183px;
+    font-size: 1rem;
+    
+    border: 1px solid #21212176;
+}
+.contact-form-2 button{
+    padding: 20px 10px;
+    width: 95%;
+    font-size: 1rem;
+    background-color: #708D62;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+}
+
+.gooogle-map-location{
+    margin: 40px 0;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map{
+    margin: 10px;
+    width: 50%;
+}
+.map-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #000;
+}
+.map-content h3{
+    font-size:1rem ;
+}
+.message-response{
+    height: 80px;
+    width: 100%;
+    background-color: #708D62;
+    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 10px;
+    transition: all .7s ease;
+}
+
+.message-response h1{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+@media only screen and (max-width:530px) {
+    
+    .Contact-container{
+        width: 100%;
+    }
+    .contact-info{
+        background-color: #708D62;
+        color: #fff;
+    }
+    .contact-form form{
+        flex-wrap: wrap;
+        height: 100%;
+        
+    }
+    .contact-form-1 .input-form{
+        width: 100%;
+    }
+    .contact-form-2 textarea{
+        width: 100%;
+    }
+    .contact-form-2 button{
+        width: 100%;
+    }
+    .gooogle-map-location{
+        flex-wrap: wrap;
+        width: 100%;
+        
+    }
+    .gooogle-map-location .map{
+        width: 100%;
+        margin: initial;
+    }
+    .map-content{
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .info_1 h3 , .info_2 h3 , .info_3 p{
+        
+        color: #fff;
+    }
+}

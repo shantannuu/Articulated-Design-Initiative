@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'poppins' , sans-serif; */
+    /* font-family: 'Spectral', serif; */
+    /* font-family: 'Futura', sans-serif; */
+    font-family: 'Didact Gothic', sans-serif;
+    -webkit-transition-duration:.2s;
+    -webkit-transition-timing-function: ease-in-out;
+    
+}
+
+.wrapper{
+    position: relative;
+    width: 100%;
+}
