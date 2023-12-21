@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
-import BannerImg from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/service01.jpg'
+import React, { useEffect, useState } from 'react'
 
 import './Services.css'
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { GetAllCategories, GetAllProjects, getProjectsByCategory } from '../../Apicalls/ProjectApi'
 import { useDispatch } from 'react-redux';
 import { showLoadingWithDelay } from '../../redux/loaderSlice';
@@ -76,12 +75,12 @@ function Services() {
 
     <div className='Services-container'>
       <div
-        className='Services-banner' style={ screenWidth <= 530 ? { backgroundImage: `url(${BannerImg})` , backgroundAttachment:'initial' } : { backgroundImage: `url(${BannerImg})` } }>
+        className='Services-banner' style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)` } }>
         <div className='img-box-bg'></div>
         <div className='banner-content'>
           <h3>Explore our work</h3>
           <h1>See what we can do together</h1>
-          <Link className='bannerBtn' to='/' >View All Projects</Link>
+          {/* <Link className='bannerBtn' to='/' >View All Projects</Link> */}
         </div>
       </div>
       <div className='category-menu'>

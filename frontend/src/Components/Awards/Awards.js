@@ -1,13 +1,5 @@
 import React from 'react'
 import './Awards.css'
-import BannerImg1 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/A1.jpg'
-import BannerImg2 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/A2.png'
-import BannerImg3 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/A3.jpg'
-import BannerImg4 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/A4.jpg'
-import BannerImg5 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/09.jpg'
-import BannerImg6 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/07.jpg'
-import BannerImg7 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/08.jpg'
-import BannerImg8 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/A4.jpg'
 import { Link } from 'react-router-dom'
 function Awards() {
   return (
@@ -16,7 +8,7 @@ function Awards() {
       <div className='award-section-card-grid'>
         <div className='award-card'>
           <div className='award-card-img'>
-            <img src={BannerImg1} />
+            <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703161615/Articulated-Design-Initiative/Awards/zr1yvep8uxqcsexs0dhx.jpg" />
           </div>
           <div className='award-card-content'>
             <h3>2023</h3>
@@ -30,7 +22,7 @@ function Awards() {
         </div>
         <div className='award-card'>
           <div className='award-card-img'>
-            <img src={BannerImg2} />
+            <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703161625/Articulated-Design-Initiative/Awards/hi92aojocgullhgk5xla.jpg" />
           </div>
           <div className='award-card-content'>
             <h3>2023</h3>
@@ -44,7 +36,7 @@ function Awards() {
         </div>
         <div className='award-card'>
           <div className='award-card-img'>
-            <img src={BannerImg3} />
+            <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703161623/Articulated-Design-Initiative/Awards/ugbxvcg5llxhulvvdwz1.jpg" />
           </div>
           <div className='award-card-content'>
             <h3>2023</h3>
@@ -58,7 +50,7 @@ function Awards() {
         </div>
         <div className='award-card'>
           <div className='award-card-img'>
-            <img src={BannerImg4} />
+            <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703161622/Articulated-Design-Initiative/Awards/hpvumrnsb8lsmiy6z42v.png" />
           </div>
           <div className='award-card-content'>
             <h3>2023</h3>

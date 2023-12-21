@@ -1,30 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './home.css'
-import { Parallax } from 'react-parallax'
-import Img1 from '../Components/Assets/09.jpg'
-import Img2 from '../Components/Assets/08.jpg'
-import Img3 from '../Components/Assets/07.jpg'
-import Categories from '../Components/Category/category'
 import Category2 from '../Components/Category/category2'
 import RecentWork from '../Components/RecentWork/RecentWork'
 import About from '../Components/About/About'
-// import ServiceCategory from '../Components/ServiceCategory/ServiceCategory'
-import News from '../Components/News/News'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faLinkedin, faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faLinkedin,  faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
-import img1 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_7.jpg'
-import img2 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_8.jpg'
-import img3 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_5.jpg'
-import img4 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_6.jpg'
-import img5 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_4.jpg'
-import img6 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_1.jpg'
-import img7 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_11.jpg'
-import img8 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_3.jpg'
-import img9 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_9.jpg'
-import img10 from '../Components/Assets/lanja-house-articulated-design-initiative-adi_10.jpg'
 import { ContactUser } from '../Apicalls/ContactApi'
 import { useDispatch } from 'react-redux'
 import { showLoadingWithDelay } from '../redux/loaderSlice'
@@ -32,10 +15,10 @@ import Awards from '../Components/Awards/Awards'
 function Home() {
   const [formResponse, setFormResponse] = useState(null);
   const dispatch = useDispatch();
-  const [isToggled, setIsToggled] = useState(false);
-  const handleToggle = () => {
-    setIsToggled(!isToggled);
-  };
+  // const [isToggled, setIsToggled] = useState(false);
+  // const handleToggle = () => {
+  //   setIsToggled(!isToggled);
+  // };
   useEffect(() => {
     dispatch(showLoadingWithDelay(2000));
     window.scrollTo(0, 0);
@@ -87,7 +70,7 @@ function Home() {
     // screenWidth <= 530 ? 1 : screenWidth <= 1024 ? 2 : 4
     <>
       <div className='parallex-scoller'>
-        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(${Img1})` , backgroundAttachment:'initial' } : { backgroundImage: `url(${Img1})` } }>
+        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)` } }>
           <div className="content-container">
             <h1>Lanja House</h1>
           </div>
@@ -95,9 +78,9 @@ function Home() {
           <div className='img-box-bg'></div>
         </div>
 
-        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(${Img2})` , backgroundAttachment:'initial' } : { backgroundImage: `url(${Img2})` } }>
+        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` } }>
           <div className="content-container">
-            <h1>YC House</h1>
+            <h1>House Of Flamboyance</h1>
 
           </div>
           <Link class="img-box-link" to='' >Know More</Link>
@@ -105,9 +88,9 @@ function Home() {
 
 
 
-        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(${Img3})` , backgroundAttachment:'initial' } : { backgroundImage: `url(${Img3})` } }>
+        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` } }>
           <div className="content-container">
-            <h1>PP House</h1>
+            <h1>Chembur House</h1>
 
           </div>
           <Link class="img-box-link" to='' >Know More</Link>
@@ -126,7 +109,7 @@ function Home() {
 
           <div class="wide reveal">
             <div class="content">
-              <img src={img1} alt="" />
+              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998922/Articulated-Design-Initiative/projects/Lanja%20House/bcllgcrleructiw5js4l.jpg" alt="" />
               <div class="hover-info">
                 <div class="inside-hover-info">
                   <h3>Lanja House</h3>
@@ -139,7 +122,7 @@ function Home() {
           </div>
           <div class="tall reveal">
             <div class="content">
-              <img src={img2} alt="" />
+              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998927/Articulated-Design-Initiative/projects/Lanja%20House/ceyzsasskqosoqoz6ujn.jpg" alt="" />
               <div class="hover-info">
                 <div class="inside-hover-info">
                   <h3>Lanja House</h3>
@@ -157,7 +140,7 @@ function Home() {
           </div>
           <div class="medium reveal">
             <div class="content">
-              <img src={img3} alt="" />
+              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998924/Articulated-Design-Initiative/projects/Lanja%20House/ztyewafheei7kdcabttf.jpg" alt="" />
               <div class="hover-info">
                 <div class="inside-hover-info">
                   <h3>Lanja House</h3>

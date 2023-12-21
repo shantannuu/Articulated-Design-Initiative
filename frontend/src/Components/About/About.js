@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './About.css'
-import BannerImg6 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/about.jpg'
 function About() {
     return (
         <div className='about-section'>
@@ -14,14 +13,14 @@ function About() {
 
                     </p>
                     <div className='div-about-link'>
-                        <Link to='/' className='about-link' >Know More</Link>
+                        <Link to='/About' className='about-link' >Know More</Link>
 
                     </div>
 
                 </div>
 
                 <div className='about-img'>
-                    <img src={BannerImg6} />
+                    <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703161224/Articulated-Design-Initiative/AboutUs/fm9wateuklkigvanzexe.jpg' />
                 </div>
             </div>
         </div>

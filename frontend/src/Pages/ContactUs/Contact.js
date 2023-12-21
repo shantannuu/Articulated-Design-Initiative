@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './Contact.css'
-import BannerImg3 from 'C:/Users/perfefect/Documents/articulated-design-initiative/frontend/src/Components/Assets/contact-us.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { ContactUser } from '../../Apicalls/ContactApi'
-import axios from 'axios';
 function Contact() {
     const [formResponse, setFormResponse] = useState(null);
     const [formData, setFormData] = useState({
@@ -49,6 +47,10 @@ function Contact() {
     }
 
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    const styles = {
+        backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703162357/Articulated-Design-Initiative/ContactUs/lgybsurybynlg4djupmb.png)`
+      };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -100,7 +102,7 @@ function Contact() {
                 </div>
 
             </div>
-            <div className='gooogle-map-location' style={ screenWidth <= 530 ? {  } : { backgroundImage: `url(${BannerImg3})` } }>
+            <div className='gooogle-map-location' style={ screenWidth <= 530 ? {backgroundImage:'none'} : styles  }>
 
                 <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.2185154843364!2d72.83895597921715!3d19.185655935737127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b75150c62a55%3A0xef68a5276a6b0074!2sSumati%20Sadan!5e0!3m2!1sen!2sin!4v1702466832744!5m2!1sen!2sin" width="700px" height="500px" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div className='map-content'>

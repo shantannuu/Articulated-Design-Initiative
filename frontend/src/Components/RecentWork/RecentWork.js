@@ -3,54 +3,7 @@ import './RecentWork.css'
 import { GetAllProjects, getCategoryById } from '../../Apicalls/ProjectApi';
 import { useDispatch } from 'react-redux';
 import { showLoadingWithDelay } from '../../redux/loaderSlice';
-import { Link, Redirect, useNavigate } from 'react-router-dom';
-
-
-const recentWorkData = [
-  {
-    "title": "Red Brick House",
-    "category": "Architecture",
-    "short_description": "After almost 25 years, the master actor steps behind the camera",
-    "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702609086/ADI/ADI--3/ugplf8q4xmumnoay0i4z.jpg"
-  },
-  {
-    "title": "Coral Beauty",
-    "category": "Interior",
-    "short_description": "The Danish arts writer finding clarity between the lines.",
-    "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702609071/ADI/ADI--3/fmvqik9r7c14r0usq8qk.jpg",
-  },
-  {
-    "title": "Kitchen",
-    "category": "Product Design",
-    "short_description": "The pop star reflects on the big feelings behind her biggest hits.",
-    "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608967/ADI/ADI--1/rptb3jv7q9mdq5knuzkk.jpg"
-  },
-  {
-    "title": "Wooden Imperial",
-    "category": "Interior",
-    "short_description": "Inside the moody, mysterious world of Sweden’s preeminent painter.",
-    "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608998/ADI/ADI--2/gmtqkis3oj5kflehczvl.jpg"
-  },
-  {
-    "title": "Head Board",
-    "category": "Interior",
-    "short_description": "Crude, contrary—and killing it: Meet the auteur of awkwardness.",
-    "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608999/ADI/ADI--2/s9ehvtrswl1d5dwmtkjg.jpg"
-  },
-  {
-    "title": "Head Board",
-    "category": "Interior",
-    "short_description": "Crude, contrary—and killing it: Meet the auteur of awkwardness.",
-    "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608999/ADI/ADI--2/s9ehvtrswl1d5dwmtkjg.jpg"
-  },
-  {
-    "title": "Head Board",
-    "category": "Interior",
-    "short_description": "Crude, contrary—and killing it: Meet the auteur of awkwardness.",
-    "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608999/ADI/ADI--2/s9ehvtrswl1d5dwmtkjg.jpg"
-  }
-]
-
+import {  useNavigate } from 'react-router-dom';
 
 
 

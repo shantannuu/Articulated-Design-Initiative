@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './About.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,7 +8,9 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 function About() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    })
     return (
         <div className='About-main-page-section'>
             <h1 className='About-main-page-section-h1'>Our Story</h1>

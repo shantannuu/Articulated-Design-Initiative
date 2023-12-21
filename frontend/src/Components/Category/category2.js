@@ -9,32 +9,7 @@ import './category.css'
 import { Link } from 'react-router-dom';
 import { GetAllCategories } from '../../Apicalls/ProjectApi';
 
-// const serviceCategoryData = [
-//     {
-//         "name": "Architecture",
-//         "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702609074/ADI/ADI--3/dmjgxogzzyu3g073dn0q.jpg"
-//     },
-//     {
-//         "name": "Interior",
-//         "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608950/ADI/ADI--1/j3dpmpxqxnercu6az2jf.jpg",
-//     },
-//     {
-//         "name": "Urban Planning and Landscape",
-//         "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608964/ADI/ADI--1/tjxdqifrfajyr9rvdybt.jpg"
-//     },
-//     {
-//         "name": "Product Design",
-//         "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608958/ADI/ADI--1/myrjkp50henrkgllhpmm.jpg"
-//     },
-//     {
-//         "name": "All",
-//         "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608946/ADI/ADI--1/cjlzqiabp8aulqnnkhz6.jpg"
-//     },
-//     {
-//         "name": "All",
-//         "image": "https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702608946/ADI/ADI--1/cjlzqiabp8aulqnnkhz6.jpg"
-//     }
-// ]
+
 
 function Category2() {
 
@@ -55,13 +30,11 @@ function Category2() {
   }
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  // const [data, setData] = useState([]);
   const handleResize = () => {
     setScreenWidth(window.innerWidth);
   };
   useEffect(() => {
     getCategories();
-    // setData(serviceCategoryData);
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -78,7 +51,7 @@ function Category2() {
         </div>
         <div>
           <p>As a practice we always believe in the art of space making with emphasis on spatial experiences in the core</p>
-          <Link to='/' className='service-category-link' >Know More</Link>
+          <Link to='/Services' className='service-category-link' >Know More</Link>
         </div>
 
       </div>
