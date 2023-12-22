@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Awards() {
   return (
     <div className='award-section'>
-      <h1 className='award-section-header'>Awards</h1>
+      <h1 className='award-section-header'>Media</h1>
       <div className='award-section-card-grid'>
         <div className='award-card'>
           <div className='award-card-img'>

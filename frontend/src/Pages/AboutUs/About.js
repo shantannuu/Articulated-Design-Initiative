@@ -21,8 +21,8 @@ function About() {
                 </div>
                 <div className='About-main-page-content'>
                     <div className='About-main-page-header'>
-                        <h1 className='About-main-page-section-h1'>Aditya Bhasarkar</h1>
-                        <h3>Creative Head</h3>
+                        <h1 className='About-main-page-section-h1'>Aditya Basarkar</h1>
+                        <h3>Principal</h3>
                     </div>
                     <div className='About-main-page-para'>
                         <p>Ar. Aditya V Basarkar graduated from PVP College of Architecture, Pune in 2015.

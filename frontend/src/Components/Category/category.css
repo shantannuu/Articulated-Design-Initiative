@@ -131,12 +131,13 @@
     color: #000;
     display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
     align-items: center;
-    padding: 50px 0;
+    padding: 50px;
 }
 .service-category-content .service-category-content-h1 h1{
-    font-size: 90px;
+    font-size: 60px;
+    color: #000000b4;
     line-height: 100px;
     text-transform: uppercase;
     font-weight: 300;
@@ -183,6 +184,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .service-category-content .service-category-content-h1 h1{
+        font-size: 3rem;
     }
     
 }

@@ -8,8 +8,8 @@ function About() {
                 <div className='about-content'>
                     <h1>About</h1>
                     <h1>Us</h1>
-                    <p>Welcome to [Firm Name], where innovation meets timeless design.
-                        At [Firm Name], we believe that architecture is not just about creating structures; it's about shaping experiences, fostering connections, and inspiring the world around us. With a legacy spanning [number of years] years, our firm has been at the forefront of [city/country]'s architectural landscape, pushing boundaries and redefining possibilities.
+                    <p>Welcome to Articulated Design Initiative, where innovation meets timeless design.
+                        At Articulated Design Initiative, we believe that architecture is not just about creating structures; it's about shaping experiences, fostering connections, and inspiring the world around us. With a legacy spanning 4 years, our firm has been at the forefront of Maharashtra's architectural landscape, pushing boundaries and redefining possibilities.
 
                     </p>
                     <div className='div-about-link'>

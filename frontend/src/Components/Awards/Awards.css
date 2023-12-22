@@ -1,5 +1,5 @@
 .award-section {
-    padding: 40px 40px;
+    padding: 40px 80px;
 }
 
 .award-section-card-grid {
@@ -16,7 +16,6 @@
     align-items: center;
     object-fit: cover;
     object-position: center;
-    cursor: pointer;
     height: 300px;
     border-bottom: 1px solid #0000005e;
     background-color: #ffffffa8;
@@ -42,7 +41,8 @@
     text-align: center;
     font-weight: 300;
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 60px;
+    color: #000000b4;
     border-bottom: 1px solid #00000039;
 
 }
@@ -87,6 +87,9 @@
 }
 
 @media only screen and (max-width:530px) {
+    .award-section{
+        padding: initial;
+    }
     .award-card {
         flex-direction: column;
         height: 380px
@@ -109,5 +112,8 @@
         width: 100%;
         justify-content: center;
         align-items: center;
+    }
+    .award-section-header{
+        font-size: 2.4rem;
     }
 }

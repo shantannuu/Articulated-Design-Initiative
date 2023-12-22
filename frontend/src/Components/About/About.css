@@ -1,5 +1,5 @@
 .about-section{
-    padding: 20px 40px;
+    padding: 20px 80px;
     position: relative;
 }
 .about-container{
@@ -29,13 +29,14 @@
 }
 
 .about-content h1{
-    font-size: 90px;
+    font-size: 60px;
     text-transform: uppercase;
-    font-weight: 400;
+    /* font-weight: 200; */
+    color: #000000b4;
     /* font-family: 'Spectral', serif; */
     /* font-family: 'Futura', sans-serif; */
     font-family: 'Didact Gothic', sans-serif;
-    line-height: 100%;
+    /* line-height: 100%; */
 }
 
 
@@ -82,6 +83,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .about-content h1{
+        font-size: 3rem;
     }
 }
 @media only screen and (max-width:1024px) {

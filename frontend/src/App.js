@@ -31,7 +31,7 @@ function App() {
           <Route path='/Project/:id' element={<><Navbar /><Category /><Footer /></>} />
           <Route path='/Contact' element={<><Navbar /><Contact /><Footer /></>} />
           <Route path='/About' element={<><Navbar /><About /><Footer /></>} />
-
+          <Route path='/Loader' element={<Loader />} />
           <Route path='/RegisterAdmin' element={<Register />} />
           <Route path='/LoginAdmin' element={<Login />} />
           <Route path='/AdminContact' element={<ProtectedRoutes><AdminContactDetail /></ProtectedRoutes>} />

@@ -49,7 +49,7 @@ function Contact() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     const styles = {
-        backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703162357/Articulated-Design-Initiative/ContactUs/lgybsurybynlg4djupmb.png)`
+        backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703216198/Articulated-Design-Initiative/ContactUs/dhuqrhsylfpnptb9lham.jpg)`
       };
 
     useEffect(() => {
@@ -70,18 +70,19 @@ function Contact() {
                 <div className='contact-info'>
                     <div className='info_1'>
                         <FontAwesomeIcon icon={faPhone} />
-                        <h3>+91 7506030065</h3>
                         <h3>+91 9823641608</h3>
+                        <h3>+91 7506030065</h3>
+                        
                     </div>
                     <div className='info_2'>
                         <FontAwesomeIcon icon={faEnvelope} />
-                        <h3>shantanubolate@gamil.com</h3>
-                        <h3>shantanubolate@gamil.com</h3>
+                        <h3>AdityaB@gamil.com</h3>
+                        <h3>pmanali0193@gamil.com</h3>
                     </div>
                     <div className='info_3'>
                         <FontAwesomeIcon icon={faLocationDot} />
 
-                        <p>201 , mhatare yorale , LT Road , Dahisar, west Mumabai 4000068</p>
+                        <p>Sumati Sadan 5RPV+7G8 Liberty Garden Rd Number 1 Malad Navy Colony Mamledarwadi Malad West Mumbai Maharashtra 400064</p>
                     </div>
                 </div>
                 <div className='contact-form'>

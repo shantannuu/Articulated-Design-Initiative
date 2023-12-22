@@ -61,13 +61,12 @@ function Home() {
     }
 
     setTimeout(() => {
-      setFormResponse(null); // Clear the response message after 5 seconds
+      setFormResponse(null); 
   }, 5000);
   }
 
 
   return (
-    // screenWidth <= 530 ? 1 : screenWidth <= 1024 ? 2 : 4
     <>
       <div className='parallex-scoller'>
         <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)` } }>
@@ -80,7 +79,7 @@ function Home() {
 
         <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` } }>
           <div className="content-container">
-            <h1>House Of Flamboyance</h1>
+            <h1>Breezy House</h1>
 
           </div>
           <Link class="img-box-link" to='' >Know More</Link>
@@ -90,17 +89,12 @@ function Home() {
 
         <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` } }>
           <div className="content-container">
-            <h1>Chembur House</h1>
+            <h1>House Of </h1>
+              <h1>Flamboyance</h1>
 
           </div>
           <Link class="img-box-link" to='' >Know More</Link>
         </div>
-
-        {/* <div className="img-box4">
-          <div className="content-container">
-            <h1>PP House</h1>
-          </div>
-        </div> */}
 
       </div>
       <RecentWork />
@@ -114,7 +108,7 @@ function Home() {
                 <div class="inside-hover-info">
                   <h3>Lanja House</h3>
                   {/* <h4>Structure</h4> */}
-                  <p>The house has an east-west orientation</p>
+                  <p>A crucial aspect of the project was that it had to be budget-friendly. The house with an overall built-up area of 1100 sq. ft, was constructed on a budget under INR 30 lakhs</p>
                   {/* <a href="#">Read More</a> */}
                 </div>
               </div>
@@ -127,14 +121,14 @@ function Home() {
                 <div class="inside-hover-info">
                   <h3>Lanja House</h3>
                   {/* <h4>Structure</h4> */}
-                  <p>Located in the rural farmlands on the outskirts of Ratnagiri, the brief for this project was to create an ancestral home that blends in with the tranquil surroundings of Lanja</p>
+                  <p>Built with a composite load-bearing construction technique on a laterite stone foundation, it helped reduce damage to the red fertile soil.</p>
                   {/* <a href="#">Read More</a> */}
                 </div>
               </div>
             </div>
           </div>
           <div class="text-desc reveal">
-            <h1>Lanje House</h1>
+            <h1>Lanja House</h1>
             <p>Located in the rural farmlands on the outskirts of Ratnagiri, the brief for this project was to create an ancestral home that blends in with the tranquil surroundings of Lanja. The idea was to build a place that would revive childhood nostalgia</p>
             <Link to="" className='text-desc-link'>Know More</Link>
           </div>
@@ -145,7 +139,7 @@ function Home() {
                 <div class="inside-hover-info">
                   <h3>Lanja House</h3>
                   {/* <h4>Structure</h4> */}
-                  <p>The main entrance of the house leads you to a spacious living area, with clearstory windows along the eastern side that provide abundant morning sunlight</p>
+                  <p>Laterite stone which is locally available within 10 km of the construction site has been predominantly used for walls. RCC beam has been incorporated for the lintel which supports the MS roof structure and the Mangalore tiles.</p>
                   {/* <a href="#">Read More</a> */}
                 </div>
               </div>
@@ -157,8 +151,6 @@ function Home() {
 
       <About />
       <Category2 />
-      {/* <ServiceCategory/> */}
-      {/* <Categories/> */}
       <Awards/>
       {/* <News /> */}
       <div className='contact-home-section'>
@@ -197,20 +189,20 @@ function Home() {
           </div>
           <div className='info_2'>
             <FontAwesomeIcon icon={faEnvelope} />
-            <h3>shantanubolate@gamil.com</h3>
-            <h3>shantanubolate@gamil.com</h3>
+            <h3>pmanali0193@gamil.com</h3>
+            <h3>AdityaB@gamil.com</h3>
           </div>
           <div className='info_3'>
             <FontAwesomeIcon icon={faLocationDot} />
 
-            <p>201 , mhatare yorale , LT Road , Dahisar, west Mumabai 4000068</p>
+            <p>Sumati Sadan 5RPV+7G8 Liberty Garden Rd Number 1 Malad Navy Colony Mamledarwadi Malad West Mumbai Maharashtra 400064</p>
           </div>
         </div>
         <div className='footer-social-media'>
           <h1>Follow Us At</h1>
           
             <div className='footer-social-media-icon'>
-              <a href='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA=='><FontAwesomeIcon icon={faInstagram} /></a>
+              <a target="_blank" rel="noopener noreferrer"  href='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA=='><FontAwesomeIcon icon={faInstagram} /></a>
               <FontAwesomeIcon icon={faWhatsapp} />
               <FontAwesomeIcon icon={faLinkedin} />
             </div>

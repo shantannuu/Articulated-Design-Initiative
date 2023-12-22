@@ -52,7 +52,7 @@ function Navbar() {
 			<nav className='header-container'>
 				<div className="logo" onClick={handleHomeClick}>
 					<svg xmlns="http://www.w3.org/2000/svg"
-						viewBox="425 425 400 400"  >
+						viewBox={ screenWidth <= 530 ? "525 380 500 500" : "425 425 400 400"}  >
 						<path fill="#0000" opacity="1" stroke="none"
 							d="
 M690.000000,1242.000000 
