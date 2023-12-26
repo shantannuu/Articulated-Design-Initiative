@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useState, useRef } from 'react'
 import './Services.css'
 
 import { Link } from 'react-router-dom';
 import { GetAllCategories, GetAllProjects, getProjectsByCategory } from '../../Apicalls/ProjectApi'
 import { useDispatch } from 'react-redux';
 import { showLoadingWithDelay } from '../../redux/loaderSlice';
-
+import { motion } from "framer-motion"
 
 function Services() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -68,6 +67,7 @@ function Services() {
     getCategories();
     getProjects();
 
+
     window.scrollTo(0, 0);
   }, []);
 
@@ -75,7 +75,7 @@ function Services() {
 
     <div className='Services-container'>
       <div
-        className='Services-banner' style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)` } }>
+        className='Services-banner' style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)` }}>
         <div className='img-box-bg'></div>
         <div className='banner-content'>
           <h3>Explore our work</h3>
@@ -90,16 +90,17 @@ function Services() {
             <li><Link className='categorymenuBtn' onClick={() => handleCategoryClick(ele._id)}>{ele.name}</Link></li>
           ))}
 
-          
+
         </ul>
       </div>
       <div className='All-project-deatils1'>
-        
+
         {projects.length > 0 ? projects.map((element, index) => (
           index % 2 === 0 ? (
             element.details.length > 0 &&
             <section class="section-1">
-              <div class="tall reveal">
+              <div 
+                class="tall reveal">
                 <div class="content">
                   <img src={element.details[0].tallImage.image} alt="" />
                   <div class="hover-info">
@@ -112,7 +113,9 @@ function Services() {
                   </div>
                 </div>
               </div>
-              <div class="wide reveal">
+              <div
+
+                class="wide reveal">
                 <div class="content">
                   <img src={element.details[0].wideImage.image} alt="" />
                   <div class="hover-info">
@@ -127,7 +130,9 @@ function Services() {
               </div>
 
 
-              <div class="medium reveal">
+              <div
+
+                class="medium reveal">
                 <div class="content">
                   <img src={element.details[0].mediumImage1.image} alt="" />
                   <div class="hover-info">
@@ -140,10 +145,16 @@ function Services() {
                   </div>
                 </div>
               </div>
-              <div class="text-desc reveal">
+              <div
+
+                class="text-desc reveal">
                 <h1>{element.title}</h1>
                 <p>{element.details[0].detailDescription1}</p>
-                <Link to={`/Project/${element._id}`} className='text-desc-link'>Know More</Link>
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  to={`/Project/${element._id}`}
+                  className='text-desc-link'>Know More</motion.a>
               </div>
 
 
@@ -183,7 +194,10 @@ function Services() {
               <div class="text-desc reveal">
                 <h1>{element.title}</h1>
                 <p>{element.details[0].detailDescription1}</p>
-                <Link to={`/Project/${element._id}`} className='text-desc-link'>Know More</Link>
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  to={`/Project/${element._id}`} className='text-desc-link'>Know More</motion.a>
               </div>
               <div class="medium reveal">
                 <div class="content">
@@ -203,7 +217,7 @@ function Services() {
           )
 
 
-        )) : <>No Projects Yet</>} 
+        )) : <>No Projects Yet</>}
 
 
       </div>

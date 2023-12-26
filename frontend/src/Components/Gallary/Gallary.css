@@ -1,0 +1,110 @@
+.gallary-section {
+    position: relative;
+    padding: 40px 80px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.gallary-h1 h1{
+    font-size: 2rem;
+    color: #000;
+    padding: 30px;
+    font-weight: 700;
+}
+
+.gallary-h1 p{
+   letter-spacing: 2px;
+    color: #000;
+    padding: 30px;
+}
+
+.project-gallary {
+    height: 600px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.gallary-card video{
+    object-fit: cover;
+    object-position: center;  
+     height: 100%;
+    width: 100%;
+}
+
+.gallary-card{
+    position: relative;
+    width: 80px;
+    border-radius: .75rem;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    background-color: #fff;
+}
+
+.gallary-card > .gallary-row{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.gallary-card > .gallary-row > .gallary-icon{
+    background-color: #223;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.gallary-card > .gallary-row > .gallary-description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay:.3s ;
+    transition: all .3s ease;
+}
+
+.gallary-description p {
+    color: #fffdfd;
+    padding-top: 5px;
+}
+
+.gallary-description h4 {
+text-transform: uppercase;
+}
+
+.project-gallary input{
+    display: none;
+}
+
+input:checked + label{
+    width: 450px;
+}
+
+
+input:checked + label .gallary-description{
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* .gallary-card[for="c1"]{
+    background-image: url('https://res.cloudinary.com/dyhf9rqfz/video/upload/v1703525338/Articulated-Design-Initiative/gallary/mt49gf7lweogxevmd01g.mov');
+} */
+

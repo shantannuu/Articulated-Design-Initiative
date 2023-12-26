@@ -12,6 +12,7 @@ import { ContactUser } from '../Apicalls/ContactApi'
 import { useDispatch } from 'react-redux'
 import { showLoadingWithDelay } from '../redux/loaderSlice'
 import Awards from '../Components/Awards/Awards'
+import Gallary from '../Components/Gallary/Gallary'
 function Home() {
   const [formResponse, setFormResponse] = useState(null);
   const dispatch = useDispatch();
@@ -98,6 +99,7 @@ function Home() {
 
       </div>
       <RecentWork />
+      <Gallary/>
       <div className='All-project-deatils1'>
         <section class="section-1">
 

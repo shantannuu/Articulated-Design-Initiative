@@ -1220,7 +1220,7 @@ z"/>
 				<div className='social-media-header' style={{ color: isHomePage ? 'white' : '#94a090' }}>
 					<Link className='social-media-icons' target="_blank" to='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA==' rel="noopener noreferrer"><i class="fab fa-brands fa-instagram"></i></Link>
 
-					<Link className='social-media-icons' target="_blank" to='whatsapp://send?phone=8879864123' ><i class="fab fa-brands fa-whatsapp" rel="noopener noreferrer"></i></Link>
+					<Link className='social-media-icons' target="_blank" to='https://wa.me/+918879864123' ><i class="fab fa-brands fa-whatsapp" rel="noopener noreferrer"></i></Link>
 				</div>
 				<div className="burger-btn" onClick={handleMenu} style={{ color: isHomePage ? 'white' : '#94a090' }}>
 					{burger ? <FaBars /> : <FaTimes />}
