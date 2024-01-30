@@ -6,13 +6,16 @@ import About from '../Components/About/About'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faLinkedin,  faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 import { ContactUser } from '../Apicalls/ContactApi'
 import { useDispatch } from 'react-redux'
 import { showLoadingWithDelay } from '../redux/loaderSlice'
-import Awards from '../Components/Awards/Awards'
+import News from '../Components/New2/News'
 import Gallary from '../Components/Gallary/Gallary'
+import MobileGallary from '../Components/Gallary/MobileGallary'
+
+import { usersVisited } from '../Apicalls/UsersApi';
 function Home() {
   const [formResponse, setFormResponse] = useState(null);
   const dispatch = useDispatch();
@@ -21,6 +24,7 @@ function Home() {
   //   setIsToggled(!isToggled);
   // };
   useEffect(() => {
+    usersVisited();
     dispatch(showLoadingWithDelay(2000));
     window.scrollTo(0, 0);
   }, []);
@@ -50,7 +54,7 @@ function Home() {
           email: '',
           number: '',
           message: '',
-      });
+        });
         console.log(response.message);
       } else {
         setFormResponse(response.message);
@@ -62,45 +66,56 @@ function Home() {
     }
 
     setTimeout(() => {
-      setFormResponse(null); 
-  }, 5000);
+      setFormResponse(null);
+    }, 5000);
   }
 
 
   return (
     <>
       <div className='parallex-scoller'>
-        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)` } }>
+        <div className="img-box" style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163123/Articulated-Design-Initiative/ParallaxBanner/q4lcsejogb2xn1s7tjao.jpg)` }}>
           <div className="content-container">
             <h1>Lanja House</h1>
           </div>
-          <Link class="img-box-link" to='' >Know More</Link>
+          <Link class="img-box-link" to='/Project/6581b283738dc6a8798e452c' >Know More</Link>
           <div className='img-box-bg'></div>
         </div>
 
-        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` } }>
+        <div className="img-box" style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` }}>
+          <div className="content-container">
+            <h1 className='firstH1'>House Of</h1>
+            <h1>Flamboyance</h1>
+
+          </div>
+          <Link class="img-box-link" to='/Project/659272b856222613482da180' >Know More</Link>
+        </div>
+
+        <div className="img-box" style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1705589966/Articulated-Design-Initiative/projects/Chembur%20House/bkfuqttkkiiy1yr2ya4s.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` }}>
           <div className="content-container">
             <h1>Breezy House</h1>
 
           </div>
-          <Link class="img-box-link" to='' >Know More</Link>
+          <Link class="img-box-link" to='/Project/65a93cd00665e138bfbe749a' >Know More</Link>
         </div>
 
 
 
-        <div className="img-box" style={ screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` , backgroundAttachment:'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` } }>
-          <div className="content-container">
-            <h1>House Of </h1>
-              <h1>Flamboyance</h1>
-
-          </div>
-          <Link class="img-box-link" to='' >Know More</Link>
-        </div>
+        
 
       </div>
       <RecentWork />
-      <Gallary/>
-      <div className='All-project-deatils1'>
+
+      { screenWidth <= 530 ? 
+        ' '  : <Gallary/> 
+      
+      
+      } 
+      
+
+      
+
+     { screenWidth > 530 && <div className='All-project-deatils1'>
         <section class="section-1">
 
           <div class="wide reveal">
@@ -149,21 +164,26 @@ function Home() {
           </div>
 
         </section>
-      </div>
+      </div> }
 
       <About />
+      
       <Category2 />
-      <Awards/>
-      {/* <News /> */}
+      {/* <Awards/> */}
+      { screenWidth <= 530 && 
+      <News /> 
+       } 
+      {/* <Blob/> */}
       <div className='contact-home-section'>
         <div className='contact-home-header'>
           <h1>Contact Us</h1>
+          <h3>Any question or remarks? Just write us a message!</h3>
         </div>
-        
+
         <div className='contact-home-form'>
-        {formResponse && (<div className='message-response'>
-                <h1>{formResponse}</h1>
-            </div>)}
+          {formResponse && (<div className='message-response'>
+            <h1>{formResponse}</h1>
+          </div>)}
           <form onSubmit={onFinish}>
             <div className='contact-form-1'>
 
@@ -179,11 +199,11 @@ function Home() {
             </div>
           </form>
         </div>
-        <div className='contact-header' style={{margin:'50px 0'}}>
+        <div className='contact-header' style={{ margin: '50px 0' }}>
           <h1>You may also find us at</h1>
-          <h3>Any question or remarks? Just write us a message!</h3>
+          
         </div>
-        <div className='contact-info' style={{padding:'0 250px'}}>
+        <div className='contact-info' style={{ padding: '0 250px' }}>
           <div className='info_1'>
             <FontAwesomeIcon icon={faPhone} />
             <h3>+91 7506030065</h3>
@@ -202,13 +222,13 @@ function Home() {
         </div>
         <div className='footer-social-media'>
           <h1>Follow Us At</h1>
-          
-            <div className='footer-social-media-icon'>
-              <a target="_blank" rel="noopener noreferrer"  href='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA=='><FontAwesomeIcon icon={faInstagram} /></a>
-              <FontAwesomeIcon icon={faWhatsapp} />
-              <FontAwesomeIcon icon={faLinkedin} />
-            </div>
-          
+
+          <div className='footer-social-media-icon'>
+            <a target="_blank" rel="noopener noreferrer" href='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA=='><FontAwesomeIcon icon={faInstagram} /></a>
+            <a target="_blank" rel="noopener noreferrer" href='https://wa.me/+918879864123'><FontAwesomeIcon icon={faWhatsapp} /></a>
+            <FontAwesomeIcon icon={faLinkedin} />
+          </div>
+
 
         </div>
       </div>

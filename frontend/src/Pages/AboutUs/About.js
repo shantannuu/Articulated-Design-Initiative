@@ -6,14 +6,16 @@ import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { usersVisited } from '../../Apicalls/UsersApi';
 function About() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     useEffect(()=>{
+        usersVisited();
         window.scrollTo(0, 0);
     })
     return (
         <div className='About-main-page-section'>
-            <h1 className='About-main-page-section-h1'>Our Story</h1>
+            {/* <h1 className='About-main-page-section-h1'>Our Story</h1> */}
             <p className='About-main-page-section-p'><FontAwesomeIcon icon={faQuoteLeft} />  As a practice we always believe in the art of space making with emphasis on spatial experiences in the core <FontAwesomeIcon icon={faQuoteRight} /></p>
             <div className='About-main-page-container'>
                 <div className='About-main-page-images'>
@@ -55,7 +57,7 @@ function About() {
                     </div>
                 </div>
             </div>
-            <div className='about-section-slider'>
+            {/* <div className='about-section-slider'>
                 <h1 className='About-main-page-section-h1'>Behind the design.</h1>
                 <p className='About-main-page-section-p'><FontAwesomeIcon icon={faQuoteLeft} />  Our Team <FontAwesomeIcon icon={faQuoteRight} /></p>
                 <Swiper
@@ -106,7 +108,7 @@ function About() {
                     </SwiperSlide>
                 </Swiper>
 
-            </div>
+            </div> */}
         </div>
     )
 }

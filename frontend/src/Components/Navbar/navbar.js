@@ -25,7 +25,7 @@ function Navbar() {
 	}
 
 	const changeValueScroll = (e) => {
-		if (screenWidth > 530 && document.documentElement.scrollTop) {
+		if (document.documentElement.scrollTop) {
 			setState(true);
 
 
@@ -33,6 +33,8 @@ function Navbar() {
 			setState(false);
 		}
 	}
+
+	
 	
 
 	window.addEventListener('scroll', changeValueScroll);
@@ -1208,21 +1210,20 @@ z"/>
 
 				</div>
 
-				<div ref={navRef} className='nav-menu' >
+				<div ref={navRef} className='nav-menu' onClick={ !burger ? handleMenu : undefined }>
 					<ul>
 						<li><Link to='/About' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>About</Link></li>
 						<li><Link to='/Services' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>Projects</Link></li>
-						<li><Link to='/' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>Blog</Link></li>
-						<li><Link to='/' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>Awards</Link></li>
+						<li><Link to='/Media' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>Media</Link></li>
 						<li><Link to='/Contact' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>Contact</Link></li>
 					</ul>
 				</div>
 				<div className='social-media-header' style={{ color: isHomePage ? 'white' : '#94a090' }}>
 					<Link className='social-media-icons' target="_blank" to='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA==' rel="noopener noreferrer"><i class="fab fa-brands fa-instagram"></i></Link>
 
-					<Link className='social-media-icons' target="_blank" to='https://wa.me/+918879864123' ><i class="fab fa-brands fa-whatsapp" rel="noopener noreferrer"></i></Link>
+					<Link className='social-media-icons' target="_blank" to='https://wa.me/+917506030065' ><i class="fab fa-brands fa-whatsapp" rel="noopener noreferrer"></i></Link>
 				</div>
-				<div className="burger-btn" onClick={handleMenu} style={{ color: isHomePage ? 'white' : '#94a090' }}>
+				<div className="burger-btn" onClick={handleMenu} style={{ color: isHomePage ? 'white' : state ? 'white' : '#94a090',fontSize:"20px" }}>
 					{burger ? <FaBars /> : <FaTimes />}
 				</div>
 			</nav>

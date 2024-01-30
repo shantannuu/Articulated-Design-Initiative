@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './category.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GetAllCategories } from '../../Apicalls/ProjectApi';
 
 
@@ -28,7 +28,7 @@ function Category2() {
       console.log(error.message);
     }
   }
-
+  const navigate = useNavigate();
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const handleResize = () => {
     setScreenWidth(window.innerWidth);
@@ -43,7 +43,8 @@ function Category2() {
   }, []);
 
   return (
-    <div className='container-slider-2'>
+  <>
+  {screenWidth <= 530 ? <></> : <div className='container-slider-2'>
       <div className='service-category-content'>
         <div className='service-category-content-h1'>
           <h1>Our </h1>
@@ -56,6 +57,7 @@ function Category2() {
 
       </div>
       <Swiper
+       onClick={ () => navigate('/Services')}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -84,7 +86,8 @@ function Category2() {
 
       </Swiper>
 
-    </div>
+    </div>}
+  </>  
   )
 }
 

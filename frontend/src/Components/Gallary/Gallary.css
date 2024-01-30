@@ -107,4 +107,32 @@ input:checked + label .gallary-description{
 /* .gallary-card[for="c1"]{
     background-image: url('https://res.cloudinary.com/dyhf9rqfz/video/upload/v1703525338/Articulated-Design-Initiative/gallary/mt49gf7lweogxevmd01g.mov');
 } */
+.gallary-h1{
+    margin-right: 20px;
+}
+.web-info{
+margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+    
+}
 
+.web-info > div{
+    height: 200px;
+    width: 250px;
+    
+    border-radius: 7px;
+}
+.web-info > div:nth-child(1){
+    background-color: #989696;
+}
+
+.web-info > div:nth-child(3){
+    background-color: #000000da;
+}
+
+.mobile-view-gallary{
+    padding:40px 10px;
+}

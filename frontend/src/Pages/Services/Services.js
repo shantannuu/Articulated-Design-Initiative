@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { GetAllCategories, GetAllProjects, getProjectsByCategory } from '../../Apicalls/ProjectApi'
 import { useDispatch } from 'react-redux';
 import { showLoadingWithDelay } from '../../redux/loaderSlice';
-import { motion } from "framer-motion"
+import { usersVisited } from '../../Apicalls/UsersApi';
 
 function Services() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -48,7 +48,6 @@ function Services() {
 
   const handleCategoryClick = async (selectedCategory) => {
     setCategory(selectedCategory);
-
     try {
       const response = await getProjectsByCategory(selectedCategory);
       console.log(response.data)
@@ -64,6 +63,7 @@ function Services() {
 
 
   useEffect(() => {
+    usersVisited();
     getCategories();
     getProjects();
 
@@ -75,7 +75,7 @@ function Services() {
 
     <div className='Services-container'>
       <div
-        className='Services-banner' style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)` }}>
+        className='Services-banner' style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1706531510/Articulated-Design-Initiative/ParallaxBanner/NOW_6744_rtkwoe.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163073/Articulated-Design-Initiative/ParallaxBanner/xt3odxnzev3v4hxobesh.jpg)` }}>
         <div className='img-box-bg'></div>
         <div className='banner-content'>
           <h3>Explore our work</h3>
@@ -98,6 +98,7 @@ function Services() {
         {projects.length > 0 ? projects.map((element, index) => (
           index % 2 === 0 ? (
             element.details.length > 0 &&
+            <>
             <section class="section-1">
               <div 
                 class="tall reveal">
@@ -150,19 +151,20 @@ function Services() {
                 class="text-desc reveal">
                 <h1>{element.title}</h1>
                 <p>{element.details[0].detailDescription1}</p>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                <Link
                   to={`/Project/${element._id}`}
-                  className='text-desc-link'>Know More</motion.a>
+                  className='text-desc-link'>Know More</Link>
               </div>
 
 
 
-
+            
             </section>
+            { screenWidth <= 530 ? <div style={{padding:"20px 0"}}><hr></hr></div>  : <div></div> }
+            </>
           ) : (
             element.details.length > 0 &&
+            <>
             <section class="section-1">
 
               <div class="wide reveal">
@@ -194,10 +196,9 @@ function Services() {
               <div class="text-desc reveal">
                 <h1>{element.title}</h1>
                 <p>{element.details[0].detailDescription1}</p>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  to={`/Project/${element._id}`} className='text-desc-link'>Know More</motion.a>
+                <Link
+
+                  to={`/Project/${element._id}`} className='text-desc-link'>Know More</Link>
               </div>
               <div class="medium reveal">
                 <div class="content">
@@ -214,10 +215,12 @@ function Services() {
               </div>
 
             </section>
+            { screenWidth <= 530 ? <div style={{padding:"20px 0"}}><hr></hr></div>  : <div></div> }
+            </>
           )
 
 
-        )) : <>No Projects Yet</>}
+        )) : <><div className='NoProjects'>No Projects Yet</div></>}
 
 
       </div>

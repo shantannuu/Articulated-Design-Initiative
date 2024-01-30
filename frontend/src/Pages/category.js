@@ -1,13 +1,32 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import '../Pages/category.css'
 import { getProjectById } from '../Apicalls/ProjectApi'
 import { useDispatch } from 'react-redux'
 import { showLoadingWithDelay } from '../redux/loaderSlice'
 import RecentWork from '../Components/RecentWork/RecentWork'
+import CustomModal from '../Components/Modal/Modal';
+import { usersVisited } from '../Apicalls/UsersApi'
 function Category() {
     const [projectData, setProjectData] = useState(null)
     const { id } = useParams();
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const openModal = (image) => {
+        if(screenWidth > 530){
+            console.log("open")
+            setModalIsOpen(true);
+            setSelectedImage(image);
+        }
+        
+    };
+
+    const closeModal = () => {
+        console.log("close")
+        setModalIsOpen(false);
+    };
 
     const dispatch = useDispatch();
     const getProjectDetail = async () => {
@@ -16,7 +35,7 @@ function Category() {
             const response = await getProjectById(id);
             dispatch(showLoadingWithDelay(2000));
 
-            
+
             if (response.success) {
                 setProjectData(response.data);
             } else {
@@ -29,101 +48,107 @@ function Category() {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
+        usersVisited();
         getProjectDetail();
         window.scrollTo(0, 0);
-    },[])
+    }, [id])
     return (
-        projectData &&
+        projectData && projectData.details.length > 0 ? (
         <>
-       
-            <div className='All-project-deatils'>
-                
-          {projectData.details.map(obj =>(
-            <section class="section-1">
 
-            <div class="wide reveal">
-                <div class="content">
-                    <img src={obj.wideImage.image} alt="" />
-                    <div class="hover-info">
-                        <div class="inside-hover-info">
-                            <h3>Lanja House</h3>
-                            {/* <h4>Structure</h4> */}
-                            <p>{obj.wideImage.description}</p>
-                            {/* <a href="#">Read More</a> */}
+            <div className='All-project-deatils'>
+
+                {projectData.details.map(obj => (
+                    <section class="section-1">
+
+                        <div class="wide reveal" onClick={() => openModal(obj.wideImage.image)}>
+                            <div class="content">
+                                <img src={obj.wideImage.image} alt="" />
+                                
+                                <div class="hover-info">
+                                    <div class="inside-hover-info">
+                                        <h3>Lanjaa House</h3>
+                                        {/* <h4>Structure</h4> */}
+                                        <p>{obj.wideImage.description}</p>
+                                        {/* <a href="#">Read More</a> */}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tall reveal">
-                <div class="content">
-                    <img src={obj.tallImage.image} alt="" />
-                    <div class="hover-info">
-                        <div class="inside-hover-info">
-                            <h3>Lanja House</h3>
-                            {/* <h4>Structure</h4> */}
-                            <p>{obj.tallImage.description}</p>
-                            {/* <a href="#">Read More</a> */}
+                        <div class="tall reveal" onClick={() => openModal(obj.tallImage.image)}>
+                            <div class="content">
+                                <img src={obj.tallImage.image} alt="" />
+                                <div class="hover-info">
+                                    <div class="inside-hover-info">
+                                        <h3>Lanja House</h3>
+                                        {/* <h4>Structure</h4> */}
+                                        <p>{obj.tallImage.description}</p>
+                                        {/* <a href="#">Read More</a> */}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-desc reveal">
-                {/* <h1>Structure</h1> */}
-                <p>{obj.detailDescription1}</p>
-                
-            </div>
-            <div class="medium reveal">
-                <div class="content">
-                    <img src={obj.mediumImage1.image} alt="" />
-                    <div class="hover-info">
-                        <div class="inside-hover-info">
-                            <h3>Lanja House</h3>
-                            {/* <h4>Structure</h4> */}
-                            <p>{obj.mediumImage1.description}</p>
-                            {/* <a href="#">Read More</a> */}
+                        <div class="text-desc reveal">
+                            {/* <h1>Structure</h1> */}
+                            <p>{obj.detailDescription1}</p>
+
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="big reveal">
-                <div class="content">
-                    <img src={obj.largeImage.image} alt="" />
-                    <div class="hover-info">
-                        <div class="inside-hover-info">
-                            <h3>Lanja House</h3>
-                            {/* <h4>Structure</h4> */}
-                            <p>{obj.largeImage.description}</p>
-                            {/* <a href="#">Read More</a> */}
+                        <div class="medium reveal" onClick={() => openModal(obj.mediumImage1.image)}>
+                            <div class="content">
+                                <img src={obj.mediumImage1.image} alt="" />
+                                <div class="hover-info">
+                                    <div class="inside-hover-info">
+                                        <h3>Lanja House</h3>
+                                        {/* <h4>Structure</h4> */}
+                                        <p>{obj.mediumImage1.description}</p>
+                                        {/* <a href="#">Read More</a> */}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="medium reveal">
-                <div class="content">
-                    <img src={obj.mediumImage2.image} alt="" />
-                    <div class="hover-info">
-                        <div class="inside-hover-info">
-                            <h3>Lanja House</h3>
-                            {/* <h4>Structure</h4> */}
-                            <p>{obj.mediumImage2.description}</p>
-                            {/* <a href="#">Read More</a> */}
+                        <div class="big reveal" onClick={() => openModal(obj.largeImage.image)}>
+                            <div class="content">
+                                <img src={obj.largeImage.image} alt="" />
+                                <div class="hover-info">
+                                    <div class="inside-hover-info">
+                                        <h3>Lanja House</h3>
+                                        {/* <h4>Structure</h4> */}
+                                        <p>{obj.largeImage.description}</p>
+                                        {/* <a href="#">Read More</a> */}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="medium reveal" onClick={() => openModal(obj.mediumImage2.image)}>
+                            <div class="content">
+                                <img src={obj.mediumImage2.image} alt="" />
+                                <div class="hover-info">
+                                    <div class="inside-hover-info">
+                                        <h3>Lanja House</h3>
+                                        {/* <h4>Structure</h4> */}
+                                        <p>{obj.mediumImage2.description}</p>
+                                        {/* <a href="#">Read More</a> */}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-desc reveal">
+                            {/* <h1>Structure</h1> */}
+                            <p>{obj.detailDescription2}</p>
+                        </div>
+
+                    </section>
+                ))}
+
+
             </div>
-            <div class="text-desc reveal">
-                {/* <h1>Structure</h1> */}
-                <p>{obj.detailDescription2}</p>
-            </div>
-            
-        </section>
-          ))}     
-                
-                
-            </div>
-            <RecentWork/>
-        </>
+            <RecentWork />
+            <CustomModal isOpen={modalIsOpen} onClose={closeModal} imageUrl={selectedImage} />
+        </> 
+        ) : (
+            <div className='No-project-deatils'><p>No project available</p></div>
+        )
     )
 }
 

@@ -6,8 +6,7 @@ function About() {
         <div className='about-section'>
             <div className='about-container'>
                 <div className='about-content'>
-                    <h1>About</h1>
-                    <h1>Us</h1>
+                    <h1>About Us</h1>
                     <p>Welcome to Articulated Design Initiative, where innovation meets timeless design.
                         At Articulated Design Initiative, we believe that architecture is not just about creating structures; it's about shaping experiences, fostering connections, and inspiring the world around us. With a legacy spanning 4 years, our firm has been at the forefront of Maharashtra's architectural landscape, pushing boundaries and redefining possibilities.
 

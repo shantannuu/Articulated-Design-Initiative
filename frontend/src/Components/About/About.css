@@ -31,25 +31,18 @@
 .about-content h1{
     font-size: 60px;
     text-transform: uppercase;
-    /* font-weight: 200; */
     color: #000000b4;
-    /* font-family: 'Spectral', serif; */
-    /* font-family: 'Futura', sans-serif; */
     font-family: 'Didact Gothic', sans-serif;
-    /* line-height: 100%; */
 }
 
 
 
 .about-content p{
     margin: 100px 20px 100px 0;
-    /* font-style: italic; */
     font-weight: 100;
     z-index: 222;
     font-size: 1.1rem;
     line-height: 35px;
-    /* font-family: 'Spectral', serif; */
-    /* font-family: 'Futura', sans-serif; */
     font-family: 'Didact Gothic', sans-serif;
 }
 
@@ -59,8 +52,6 @@
     border: 1px solid #000;
     text-decoration: none;
     color: #000;
-    /* font-family: 'Spectral', serif; */
-    /* font-family: 'Futura', sans-serif; */
     font-family: 'Didact Gothic', sans-serif;
     font-size: 16px;
     
@@ -70,10 +61,14 @@
 }
 @media only screen and (max-width:530px){
     .about-section{
-        padding: 20px !important;
+        padding: 5px !important;
+    }
+    .about-container{
+        flex-wrap: wrap !important;
     }
     .about-content{
         width: 100% !important;
+        margin-bottom: 30px !important;
     }
     .about-img{
         width: 100% !important;
@@ -85,7 +80,11 @@
         align-items: center;
     }
     .about-content h1{
-        font-size: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .about-content p{
+        margin:30px 5px !important;
     }
 }
 @media only screen and (max-width:1024px) {

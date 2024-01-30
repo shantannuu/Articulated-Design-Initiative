@@ -100,17 +100,12 @@ nav .nav-menu ul li .menu-link{
 }
 
 @media only screen and (max-width:1024px) {
-    .header{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-    }
+    
     
    
 
     .header.black {
-        background : #ffffff60 ;
+        background : #000000b9 ;
         height: 80px ;
     }
     
@@ -136,7 +131,7 @@ nav .nav-menu ul li .menu-link{
         background: transparent;
         border: none;
         outline: none;
-        color : #fff;
+        color : #fff ;
         font-size: 1.7rem;
         transition: opacity .2s transform .4s;
         

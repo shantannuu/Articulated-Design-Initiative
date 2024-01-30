@@ -77,7 +77,6 @@
 .contact-home-header {
     font-size: 60px;
     color: #000000b4;
-    text-transform: uppercase;
     font-weight: 400;
     font-family: 'Didact Gothic', sans-serif;
     line-height: 100%;
@@ -90,6 +89,7 @@
     content: " ";
     width: 59.828125vw;
     height: 0.2775067750677507vh;
+    
     position: absolute;
     top: 4.475067750677507vh;
     right: 1.6276041666666667vw;
@@ -170,28 +170,38 @@
     font-size: 2rem;
 }
 
+.contact-home-header h1{
+
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
 
 @media only screen and (max-width:530px) {
     .content-container {
         margin-left: initial !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: flex-end !important;
     }
 
-    .content-container h1 {
+    .content-container h1 ,.content-container .firstH1 {
         font-size: 2rem !important;
         max-width: 100% !important;
+        margin-bottom: 75px !important;
+    }
 
+    .content-container .firstH1{
+        margin-bottom: inherit !important;
     }
 
     .img-box .img-box-link {
         text-align: center !important;
         right: 0 !important;
 
+        opacity: 0.7 !important;
     }
 
     .All-project-deatils1 {
-        padding: 20px !important;
+        padding: 5px !important;
     }
 
     .section-1 .tall {
@@ -200,11 +210,11 @@
     }
 
     .contact-home-section {
-        padding: 20px;
+        padding: 40px 20px;
     }
 
     .contact-home-header {
-        font-size: 2.4rem;
+        font-size: 2rem;
         margin: initial;
         margin-bottom: 50px;
         text-align: center;
@@ -238,7 +248,7 @@
     .contact-header h1{
         font-size: 2rem !important;
     }
-    .contact-header h3{
+    .contact-home-header h3{
         font-size: 1rem !important;
     }
     .contact-info{

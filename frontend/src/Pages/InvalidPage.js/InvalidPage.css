@@ -1,0 +1,19 @@
+.notFoundPage{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+flex-direction: column;
+}
+
+.notFoundPage h1{
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: red;
+}
+
+.notFoundPage p{
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+}

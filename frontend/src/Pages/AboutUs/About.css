@@ -126,9 +126,11 @@
     .About-main-page-section{
         padding: 100px 20px;
     }
+    
     .About-main-page-container{
         flex-wrap: wrap;
         padding: initial;
+        border: none;
     }
     .About-main-page-images{
         width: 100%;

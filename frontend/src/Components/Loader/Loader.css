@@ -10,7 +10,7 @@
     height: 40px;
     width: 40px;
     box-sizing: border-box;
-    border: 3px solid #f7c607;
+    border: 3px solid #94a090;
     position: absolute;
     margin: auto;
     top: 0;
@@ -37,7 +37,7 @@
 .loader div:nth-child(2){
     height: 40px;
     width: 40px;
-    background-color: #f7c607;
+    background-color: #94a090;
     position: absolute;
     margin: auto;
     top: 0;

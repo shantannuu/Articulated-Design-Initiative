@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import './RecentWork.css'
 import { GetAllProjects, getCategoryById } from '../../Apicalls/ProjectApi';
 import { useDispatch } from 'react-redux';
 import { showLoadingWithDelay } from '../../redux/loaderSlice';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Autoplay,Navigation } from 'swiper/modules';
 function RecentWork() {
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
   const Navigate = useNavigate();
-
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   function truncateText(text, maxWords) {
     const words = text.split(' ');
     const truncatedWords = words.slice(0, maxWords);
@@ -63,26 +67,63 @@ function RecentWork() {
 
 
   return (
-    <div className='recent-work'>
-      <h1 className='recent-work-header'>Recent Works</h1>
-      <div className='work-card-grid'>
-        {data.map((newData, index) =>
+    <>
+      {screenWidth <= 530 ?
 
-        (
-          index < 5 && (<div className='work-card'  onClick={() => Navigate(`/Project/${newData._id}`)}>
-            <div className='work-card-img'>
-              <img src={newData.projectImage} />
-            </div>
-            <div className='work-card-content'>
-              <h3>{newData.categoryName}</h3>
-              <h1>{newData.title}</h1>
-              <h3>{newData.shortDescription === "" ? '' : `${truncateText(newData.shortDescription, 20)}...`}</h3>
+        <div className='recent-work'>
+          <h1 className='recent-work-header'>Recent Works</h1>
+          <Swiper autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }} navigation={true} modules={[Navigation, Autoplay]} className="mySwiper">
+            {data.map((newData, index) =>
 
-            </div>
-          </div>)))}
-      </div>
-    </div>
+            (
+              index < 5 && (
+                <SwiperSlide>
+                  <div className='work-card' onClick={() => { Navigate(`/Project/${newData._id}`); }}>
+                    <div className='work-card-img'>
+                      <img src={newData.projectImage} />
+                    </div>
+                    <div className='work-card-content'>
+                      <h3>{newData.categoryName}</h3>
+                      <h1>{newData.title}</h1>
+                      <h3>{newData.shortDescription === "" ? '' : `${truncateText(newData.shortDescription, 20)}...`}</h3>
+
+                    </div>
+                  </div>
+                </SwiperSlide>
+              )))}
+
+
+
+
+          </Swiper>
+        </div>
+
+
+        : <div className='recent-work'>
+          <h1 className='recent-work-header'>Recent Works</h1>
+          <div className='work-card-grid'>
+            {data.map((newData, index) =>
+
+            (
+              index < 5 && (<div className='work-card' onClick={() => { Navigate(`/Project/${newData._id}`); }}>
+                <div className='work-card-img'>
+                  <img src={newData.projectImage} />
+                </div>
+                <div className='work-card-content'>
+                  <h3>{newData.categoryName}</h3>
+                  <h1>{newData.title}</h1>
+                  <h3>{newData.shortDescription === "" ? '' : `${truncateText(newData.shortDescription, 20)}...`}</h3>
+
+                </div>
+              </div>)))}
+          </div>
+        </div>}
+    </>
   )
+
 }
 
 export default RecentWork

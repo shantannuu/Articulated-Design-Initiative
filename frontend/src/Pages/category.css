@@ -2,6 +2,9 @@ section{
     margin-bottom: 40px;
     position: relative;
 }
+section:last-child{
+    margin-bottom: initial !important;
+}
 .All-project-deatils{
     padding: 100px 20px 0 20px;
     position: relative;
@@ -9,6 +12,18 @@ section{
 .All-project-deatils1{
     padding: 40px;
     position: relative;
+}
+
+.No-project-deatils{
+    padding: 100px 20px 0 20px;
+    position: relative;
+    height: 49vh;
+}
+.No-project-deatils p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
 .full-visit{
     width: 50px;
@@ -22,7 +37,7 @@ section{
 }
 .section-1{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
     grid-auto-rows: 200px ;
     grid-gap: 1em;
     grid-auto-flow: row;
@@ -68,9 +83,9 @@ section{
 
 .section-1 > div .content:hover  img{
     transform: scale(1.5);
-}
+} 
 
-.section-1 > div .content:hover .hover-info{
+ .section-1 > div .content:hover .hover-info{
     opacity: 0.7;
     transform: translateY(-30px);
 }
@@ -236,6 +251,30 @@ section{
     margin-bottom: 20px 0;
     padding: 30px;
 }
+
+@media only screen and (max-width:530px) {
+    .All-project-deatils{
+        padding: 100px 5px 0 5px;
+    }
+    .All-project-deatil1{
+        padding: 5px;
+    }
+    .section-1{
+        grid-auto-rows: 300px ;
+    }
+    .text-desc p{
+        font-size: 1.2rem !important;
+        text-align: center;
+    }
+    .inside-hover-info p {
+        font-size: 0.9rem !important;
+    }
+    .inside-hover-info h3 {
+        font-size: 1.2rem !important;
+    }
+}
+
+
 @media only screen and (max-width:950px) {
     .section-1{
         grid-template-columns: 1fr;

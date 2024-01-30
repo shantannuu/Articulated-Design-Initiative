@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { GetLoggedInUserDetails } from '../../Apicalls/AdminApi';
@@ -49,6 +49,11 @@ function ProtectedRoutes({ children }) {
                     <nav class="mt-6">
                         <ul>
                             <li class="mb-2">
+                                <Link to="/AdminStat" class="flex items-center p-4">
+                                    Statistic Report
+                                </Link>
+                            </li>
+                            <li class="mb-2">
                                 <Link to="/AdminContact" class="flex items-center p-4">
                                     Users Contact Details
                                 </Link>
@@ -84,7 +89,7 @@ function ProtectedRoutes({ children }) {
                             </button>
 
 
-                            <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-200" onClick={()=>{
+                            <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-200" onClick={() => {
                                 localStorage.removeItem("token");
                                 navigate("/LoginAdmin")
                             }}>Logout</button>

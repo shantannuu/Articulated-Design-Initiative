@@ -288,6 +288,13 @@
     position: relative;
 }
 
+.NoProjects{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #f04949a7;
+}
 @media only screen and (max-width:530px) {
     .card-all:nth-of-type(2n) {
         margin-top: initial;
@@ -311,6 +318,7 @@
     }
     .All-project-deatils1{
         margin-top: 20px;
+        padding: 5px;
     }
 }
 

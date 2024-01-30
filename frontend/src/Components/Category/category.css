@@ -101,6 +101,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px !important;
+    cursor: pointer;
 }
 
 .swiper-slide>.slide-content {
@@ -162,7 +163,7 @@
 
 @media only screen and (max-width:530px) {
     .container-slider-2{
-        padding: 20px;
+        padding: 5px;
     }
     .service-category-content{
         flex-wrap: wrap;

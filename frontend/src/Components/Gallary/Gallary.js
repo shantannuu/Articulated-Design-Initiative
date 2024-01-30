@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import './Gallary.css'
 function Gallary() {
     const [selectedRadio, setSelectedRadio] = useState('c1');
@@ -15,22 +15,22 @@ function Gallary() {
     };
 
     const playVideo = (radioId) => {
-        try{
+        try {
             Object.keys(videoRefs).forEach((key) => {
                 if (videoRefs[key].current) {
                     videoRefs[key].current.pause();
                 }
             });
-    
+
             // Play the selected video
             if (videoRefs[radioId].current) {
                 videoRefs[radioId].current.play();
             }
-        }catch(error){
+        } catch (error) {
             console.log("error")
         }
         // Pause all videos
-        
+
     };
 
     return (
@@ -38,7 +38,22 @@ function Gallary() {
             <div className='gallary-h1'>
                 <h1>Elevate Your Perspective: Architectural Wonders Unveiled in Stunning Videos</h1>
                 <p>Embark on a visual odyssey with our exclusive architectural video showcase. Behold the grandeur of iconic structures, witness the evolution of design, and delve into the narratives behind each masterpiece. Immerse yourself in the fusion of creativity and engineering that defines our built landscape. Whether you're a design enthusiast or simply curious about the world around you, our curated videos promise to inspire, educate, and evoke a profound appreciation for the art of architecture. Welcome to a visual journey where every frame tells a story of innovation and elegance.</p>
+                {/* <div className='web-info'>
+                    <div>
+                        <h3>10 +</h3>
+                        <h3>Happy Customer</h3>
+                    </div>
+                    <div>
+                        <h3>12 +</h3>
+                        <h3>Elegant Projects</h3>
+                    </div>
+                    <div>
+                        <h3>5 +</h3>
+                        <h3>Years of Service</h3>
+                    </div>
+                </div> */}
             </div>
+
             <div className='project-gallary'>
                 <input type='radio' name='slide' id='c1' checked={selectedRadio === 'c1'}
                     onChange={() => handleChange('c1')} />
@@ -83,6 +98,7 @@ function Gallary() {
                     </div>
                 </label>
             </div>
+
         </div>
     )
 }
