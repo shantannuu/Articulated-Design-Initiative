@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import News from '../../Components/New2/News'
 import './Media.css'
+import { usersVisited } from '../../Apicalls/UsersApi';
 function Media() {
     useEffect(() => {
         usersVisited();
