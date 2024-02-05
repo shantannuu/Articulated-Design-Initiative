@@ -6,11 +6,9 @@ import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import { usersVisited } from '../../Apicalls/UsersApi';
 function About() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     useEffect(()=>{
-        usersVisited();
         window.scrollTo(0, 0);
     })
     return (

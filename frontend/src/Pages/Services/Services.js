@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { GetAllCategories, GetAllProjects, getProjectsByCategory } from '../../Apicalls/ProjectApi'
 import { useDispatch } from 'react-redux';
 import { showLoadingWithDelay } from '../../redux/loaderSlice';
-import { usersVisited } from '../../Apicalls/UsersApi';
 
 function Services() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -13,6 +12,14 @@ function Services() {
   const [projects, setProjects] = useState([])
   const [categories, setCategories] = useState([])
   const [category, setCategory] = useState('');
+
+  function truncateText(text, maxWords) {
+    const words = text.split(' ');
+    const truncatedWords = words.slice(0, maxWords);
+    const truncatedText = truncatedWords.join(' ');
+    return truncatedText;
+  }
+
   const getCategories = async () => {
     try {
       dispatch(showLoadingWithDelay(2000));
@@ -63,7 +70,6 @@ function Services() {
 
 
   useEffect(() => {
-    usersVisited();
     getCategories();
     getProjects();
 
@@ -80,7 +86,6 @@ function Services() {
         <div className='banner-content'>
           <h3>Explore our work</h3>
           <h1>See what we can do together</h1>
-          {/* <Link className='bannerBtn' to='/' >View All Projects</Link> */}
         </div>
       </div>
       <div className='category-menu'>
@@ -99,123 +104,108 @@ function Services() {
           index % 2 === 0 ? (
             element.details.length > 0 &&
             <>
-            <section class="section-1">
-              <div 
-                class="tall reveal">
-                <div class="content">
-                  <img src={element.details[0].tallImage.image} alt="" />
-                  <div class="hover-info">
-                    <div class="inside-hover-info">
-                      <h3>{element.title}</h3>
-                      {/* <h4>Structure</h4> */}
-                      <p>{element.details[0].tallImage.description}</p>
-                      {/* <a href="#">Read More</a> */}
+              <section class="section-1">
+                <div
+                  class="tall reveal">
+                  <div class="content">
+                    <img src={element.details[0].tallImage.image} alt="" />
+                    {element.details[0].detailDescription2 === '' ? <></> : <div class="hover-info">
+                      <div class="inside-hover-info">
+                        <p>{truncateText(element.details[0].detailDescription2,20)}...</p>
+                      </div>
                     </div>
+                    }
                   </div>
                 </div>
-              </div>
-              <div
+                <div
 
-                class="wide reveal">
-                <div class="content">
-                  <img src={element.details[0].wideImage.image} alt="" />
-                  <div class="hover-info">
-                    <div class="inside-hover-info">
-                      <h3>{element.title}</h3>
-                      {/* <h4>Structure</h4> */}
-                      <p>{element.details[0].wideImage.description}</p>
-                      {/* <a href="#">Read More</a> */}
+                  class="wide reveal">
+                  <div class="content">
+                    <img src={element.details[0].wideImage.image} alt="" />
+                    { element.details[1] && (element.details[1].detailDescription1 === '' ? <></> : <div class="hover-info">
+                      <div class="inside-hover-info">
+                        <p>{element.details[1] && element.details[1].detailDescription1 ? `${truncateText(element.details[1].detailDescription1,20)}...` : ''}</p>
+                      </div>
                     </div>
+                    )}
                   </div>
                 </div>
-              </div>
 
 
-              <div
+                <div
 
-                class="medium reveal">
-                <div class="content">
-                  <img src={element.details[0].mediumImage1.image} alt="" />
-                  <div class="hover-info">
-                    <div class="inside-hover-info">
-                      <h3>{element.title}</h3>
-                      {/* <h4>Structure</h4> */}
-                      <p>{element.details[0].mediumImage1.description}</p>
-                      {/* <a href="#">Read More</a> */}
+                  class="medium reveal">
+                  <div class="content">
+                    <img src={element.details[0].mediumImage1.image} alt="" />
+                   { element.details[1] && (element.details[1].detailDescription2 === '' ? <></> : <div class="hover-info">
+                      <div class="inside-hover-info">
+                        <p>{element.details[1] && element.details[1].detailDescription2 ? `${truncateText(element.details[1].detailDescription2,20)}...` : ''}</p>
+                      </div>
                     </div>
+                    )}
                   </div>
                 </div>
-              </div>
-              <div
+                <div
 
-                class="text-desc reveal">
-                <h1>{element.title}</h1>
-                <p>{element.details[0].detailDescription1}</p>
-                <Link
-                  to={`/Project/${element._id}`}
-                  className='text-desc-link'>Know More</Link>
-              </div>
-
+                  class="text-desc text-desc-2 reveal">
+                  <h1>{element.title}</h1>
+                  <p>{element.details[0].detailDescription1}</p>
+                  <Link
+                    to={`/Project/${element._id}`}
+                    className='text-desc-link'>Know More</Link>
+                </div>
 
 
-            
-            </section>
-            { screenWidth <= 530 ? <div style={{padding:"20px 0"}}><hr></hr></div>  : <div></div> }
+
+
+              </section>
+              {screenWidth <= 530 ? <div style={{ padding: "20px 0" }}><hr></hr></div> : <div></div>}
             </>
           ) : (
             element.details.length > 0 &&
             <>
-            <section class="section-1">
+              <section class="section-1">
 
-              <div class="wide reveal">
-                <div class="content">
-                  <img src={element.details[0].wideImage.image} alt="" />
-                  <div class="hover-info">
-                    <div class="inside-hover-info">
-                      <h3>{element.title}</h3>
-                      {/* <h4>Structure</h4> */}
-                      <p>{element.details[0].wideImage.description}</p>
-                      {/* <a href="#">Read More</a> */}
-                    </div>
+                <div class="wide reveal">
+                  <div class="content">
+                    <img src={element.details[0].wideImage.image} alt="" />
+                    {element.details[0].detailDescription2 === '' ? <></> : <div class="hover-info">
+                      <div class="inside-hover-info">
+                        <p>{truncateText(element.details[0].detailDescription2,20)}...</p>
+                      </div>
+                    </div>}
                   </div>
                 </div>
-              </div>
-              <div class="tall reveal">
-                <div class="content">
-                  <img src={element.details[0].tallImage.image} alt="" />
-                  <div class="hover-info">
-                    <div class="inside-hover-info">
-                      <h3>{element.title}</h3>
-                      {/* <h4>Structure</h4> */}
-                      <p>{element.details[0].tallImage.description}</p>
-                      {/* <a href="#">Read More</a> */}
-                    </div>
+                <div class="tall reveal">
+                  <div class="content">
+                    <img src={element.details[0].tallImage.image} alt="" />
+                    {element.details[1] && (element.details[1].detailDescription1 === '' ? <></> : <div class="hover-info">
+                      <div class="inside-hover-info">
+                        <p>{element.details[1] && element.details[1].detailDescription1 ? `${truncateText(element.details[1].detailDescription1,20)}...` : ''}</p>
+                      </div>
+                    </div>)}
                   </div>
                 </div>
-              </div>
-              <div class="text-desc reveal">
-                <h1>{element.title}</h1>
-                <p>{element.details[0].detailDescription1}</p>
-                <Link
+                <div class="text-desc text-desc-2 reveal">
+                  <h1>{element.title}</h1>
+                  <p>{element.details[0].detailDescription1}</p>
+                  <Link
 
-                  to={`/Project/${element._id}`} className='text-desc-link'>Know More</Link>
-              </div>
-              <div class="medium reveal">
-                <div class="content">
-                  <img src={element.details[0].mediumImage1.image} alt="" />
-                  <div class="hover-info">
-                    <div class="inside-hover-info">
-                      <h3>{element.title}</h3>
-                      {/* <h4>Structure</h4> */}
-                      <p>{element.details[0].mediumImage1.description}</p>
-                      {/* <a href="#">Read More</a> */}
-                    </div>
+                    to={`/Project/${element._id}`} className='text-desc-link'>Know More</Link>
+                </div>
+                <div class="medium reveal">
+                  <div class="content">
+                    <img src={element.details[0].mediumImage1.image} alt="" />
+                    {element.details[1] && (element.details[1].detailDescription2 === '' ? <></> : <div class="hover-info">
+                      <div class="inside-hover-info">
+                        <p>{element.details[1] && element.details[1].detailDescription2 ? `${truncateText(element.details[1].detailDescription2,20)}...` : ''}</p>
+                      </div>
+                    </div>)}
                   </div>
                 </div>
-              </div>
 
-            </section>
-            { screenWidth <= 530 ? <div style={{padding:"20px 0"}}><hr></hr></div>  : <div></div> }
+              </section>
+              {screenWidth <= 530 ? <div style={{ padding: "20px 0" }}><hr></hr></div> : <div></div>}
             </>
           )
 

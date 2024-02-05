@@ -85,14 +85,19 @@
     position: relative;
 }
 
+.contact-home-header h3{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 .contact-home-header::before {
     content: " ";
-    width: 59.828125vw;
+    width: 57.828125vw;
     height: 0.2775067750677507vh;
     
     position: absolute;
     top: 4.475067750677507vh;
-    right: 1.6276041666666667vw;
+    right: 2.627604vw;
     background-color: #000000b4;
     border-radius: 5px;
 }

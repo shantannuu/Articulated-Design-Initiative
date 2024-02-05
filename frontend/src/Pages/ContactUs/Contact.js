@@ -3,7 +3,6 @@ import './Contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { ContactUser } from '../../Apicalls/ContactApi'
-import { usersVisited } from '../../Apicalls/UsersApi'
 function Contact() {
     const [formResponse, setFormResponse] = useState(null);
     const [formData, setFormData] = useState({
@@ -54,7 +53,6 @@ function Contact() {
       };
 
     useEffect(() => {
-        usersVisited();
         window.scrollTo(0, 0);
 
     }, [])

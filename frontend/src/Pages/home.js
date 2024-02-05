@@ -15,7 +15,6 @@ import News from '../Components/New2/News'
 import Gallary from '../Components/Gallary/Gallary'
 import MobileGallary from '../Components/Gallary/MobileGallary'
 
-import { usersVisited } from '../Apicalls/UsersApi';
 function Home() {
   const [formResponse, setFormResponse] = useState(null);
   const dispatch = useDispatch();
@@ -24,7 +23,6 @@ function Home() {
   //   setIsToggled(!isToggled);
   // };
   useEffect(() => {
-    usersVisited();
     dispatch(showLoadingWithDelay(2000));
     window.scrollTo(0, 0);
   }, []);
@@ -99,7 +97,13 @@ function Home() {
           <Link class="img-box-link" to='/Project/65a93cd00665e138bfbe749a' >Know More</Link>
         </div>
 
+        <div className="img-box" style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707143640/Articulated-Design-Initiative/projects/House%20with%20Terraces/olntrvbfi3gzumroucpx.png)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707143640/Articulated-Design-Initiative/projects/House%20with%20Terraces/olntrvbfi3gzumroucpx.png)` }}>
+          <div className="content-container">
+            <h1>House Of Terrace</h1>
 
+          </div>
+          <Link class="img-box-link" to='/Project/65c0eebf0b0ca20418192ce7' >Know More</Link>
+        </div>
 
         
 
@@ -123,9 +127,9 @@ function Home() {
               <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998922/Articulated-Design-Initiative/projects/Lanja%20House/bcllgcrleructiw5js4l.jpg" alt="" />
               <div class="hover-info">
                 <div class="inside-hover-info">
-                  <h3>Lanja House</h3>
+                  {/* <h3>Lanja House</h3> */}
                   {/* <h4>Structure</h4> */}
-                  <p>A crucial aspect of the project was that it had to be budget-friendly. The house with an overall built-up area of 1100 sq. ft, was constructed on a budget under INR 30 lakhs</p>
+                  <p>The house has an east-west orientation. The main entrance of the house leads you to a spacious living area, with clearstory windows along the eastern side that provide abundant morning sunlight. Large window openings with high ceilings enable cross-ventilation and make the house appear spacious.</p>
                   {/* <a href="#">Read More</a> */}
                 </div>
               </div>
@@ -136,27 +140,27 @@ function Home() {
               <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998927/Articulated-Design-Initiative/projects/Lanja%20House/ceyzsasskqosoqoz6ujn.jpg" alt="" />
               <div class="hover-info">
                 <div class="inside-hover-info">
-                  <h3>Lanja House</h3>
+                  {/* <h3>Lanja House</h3> */}
                   {/* <h4>Structure</h4> */}
-                  <p>Built with a composite load-bearing construction technique on a laterite stone foundation, it helped reduce damage to the red fertile soil.</p>
+                  <p>The simplicity of the house is accentuated by the contemporary implementation of the traditional materials. The exposed laterite finish sets a very natural backdrop, and being sustainably conscious The Kitchen and dining area are positioned in the East, and benefit from the morning light coming in</p>
                   {/* <a href="#">Read More</a> */}
                 </div>
               </div>
             </div>
           </div>
-          <div class="text-desc reveal">
+          <div class="text-desc text-desc-2 reveal">
             <h1>Lanja House</h1>
-            <p>Located in the rural farmlands on the outskirts of Ratnagiri, the brief for this project was to create an ancestral home that blends in with the tranquil surroundings of Lanja. The idea was to build a place that would revive childhood nostalgia</p>
-            <Link to="" className='text-desc-link'>Know More</Link>
+            <p>Located in the picturesque coastal town of Lanja, Ratnagiri, Maharashtra, lies a beautiful home that embodies simple living blending with its natural surroundings. The idea was to build a place that would revive childhood nostalgia</p>
+            <Link class="text-desc-link" to='/Project/6581b283738dc6a8798e452c' >Know More</Link>
           </div>
           <div class="medium reveal">
             <div class="content">
               <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998924/Articulated-Design-Initiative/projects/Lanja%20House/ztyewafheei7kdcabttf.jpg" alt="" />
               <div class="hover-info">
                 <div class="inside-hover-info">
-                  <h3>Lanja House</h3>
+                  {/* <h3>Lanja House</h3> */}
                   {/* <h4>Structure</h4> */}
-                  <p>Laterite stone which is locally available within 10 km of the construction site has been predominantly used for walls. RCC beam has been incorporated for the lintel which supports the MS roof structure and the Mangalore tiles.</p>
+                  <p>At the core of the design concept was sustainable living and construction. The bungalow was built with a composite load-bearing construction technique that uses a laterite stone foundation minimising damage to the fertile red soil native to the region. The home balances natural light, sloped Mangalore-tiled roofs, exposed laterite walls, and rough Kota stone flooring drawing on a palette of indigenous materials.</p>
                   {/* <a href="#">Read More</a> */}
                 </div>
               </div>
@@ -177,10 +181,11 @@ function Home() {
       <div className='contact-home-section'>
         <div className='contact-home-header'>
           <h1>Contact Us</h1>
-          <h3>Any question or remarks? Just write us a message!</h3>
+          { screenWidth <= 530 && <h3>Any question or remarks? Just write us a message!</h3>}
         </div>
 
         <div className='contact-home-form'>
+        
           {formResponse && (<div className='message-response'>
             <h1>{formResponse}</h1>
           </div>)}
@@ -201,7 +206,7 @@ function Home() {
         </div>
         <div className='contact-header' style={{ margin: '50px 0' }}>
           <h1>You may also find us at</h1>
-          
+          { screenWidth > 530 && <h3>Any question or remarks? Just write us a message!</h3> }
         </div>
         <div className='contact-info' style={{ padding: '0 250px' }}>
           <div className='info_1'>

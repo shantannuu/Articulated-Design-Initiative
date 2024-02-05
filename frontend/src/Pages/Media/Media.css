@@ -1,3 +1,157 @@
 .mediaPage{
-    padding: 80px 0 30px 0;
+    padding: 100px 100px 30px 100px;
+}
+
+.media-main-Page-Header{
+    font-size: 3rem;
+    color: #0000005f;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.section-container{
+    width: 100%;
+}
+
+.news-tab-section-container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.tab-btn-container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-right: 30px;
+    background-color: #fff;
+}
+.tab-btn-container button{
+    padding: 15px 30px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid #00000039;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.tab-btn-header{
+    text-align: left;
+    width: 100%;
+    border-bottom: 1px solid #00000039;
+}
+.tab-btn-header h3{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    
+}
+
+
+
+.tab-btn-container button:hover{
+    background-color: rgba(255, 255, 255, 0.375);
+}
+
+.award-section-card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-gap: 30px;
+}
+.award-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    height: 400px;
+    transition: all 0.3s ease-in-out;
+}
+.award-card:hover{
+    transform: scale(1.1);
+}
+.award-card-img{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    transition: all 9s ease;
+}
+.award-card > .award-card-img > img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    transition: all 9s ease;
+}
+.award-section-header{
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #00000039;
+}
+.award-card-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: self-start;
+    width: 70%;
+    height: 20%;
+}
+.award-card-content h3{
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.award-card-content h1{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.award-card-link{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media only screen and (max-width:530px) {
+    .mediaPage{
+        padding: 100px 0 30px 0;
+    }
+    .media-main-Page-Header{
+        font-size: 2rem !important;
+    }
+    .section-container{
+        width: 100% !important;
+    }
+    .award-section-card-grid{
+        grid-template-columns:1fr;
+        grid-gap: 10px;
+    }
+    .award-card:hover{
+        transform: initial;
+    }
+    .news-tab-section-container{
+        margin: initial;
+    }
+    .award-card{
+        height: 350px;
+    }
 }

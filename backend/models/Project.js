@@ -55,6 +55,15 @@ const projectSchema = new mongoose.Schema({
     title: {
         type: String,
     },
+    location: {
+        type: String,
+    },
+    area :{
+        type: String,
+    },
+    photography:{
+        type: String,
+    },
     shortDescription: {
         type: String,
     },

@@ -22,20 +22,20 @@ const CustomModal = ({ isOpen, onClose, imageUrl }) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          top: '55%',
+          top: '50%',
           left: '50%',
           right: 'auto',
           bottom: 'auto',
           transform: 'translate(-50%, -50%)',
           border: 'none',
           boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-          height:'600px',
-          width:'900px',
+          height:'700px',
+          width:'1100px',
           overflow:"hidden",
         },
       }}
     >
-      <img src={imageUrl} alt="Modal Image" style={{maxHeight:'100%',maxWidth:"100%"}}/>
+      <img src={imageUrl} alt="Modal Image" style={{maxHeight:'100%',maxWidth:"100%",height:"100%",width:"100%"}}/>
       <button onClick={onClose} style={{position:"absolute",top:"5px",right:"5px"}}><FontAwesomeIcon icon={faXmark} style={{fontSize:"30px"}}/></button>
     </Modal>
   );

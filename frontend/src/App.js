@@ -20,21 +20,23 @@ import About from './Pages/AboutUs/About';
 import NotFoundPage from './Pages/InvalidPage.js/InvalidPage';
 import AdminStat from './Pages/Admin/AdminStat';
 import Media from './Pages/Media/Media';
-// import { usersVisited } from './Apicalls/UsersApi';
+import { usersVisited } from './Apicalls/UsersApi';
 function App() {
 
   const { loading } = useSelector((state) => state.loaders);
 
-  // useEffect(() => {
-  //   // Make a request to the server to track the visit
-  //   usersVisited();
-  // }, []);
+  useEffect(() => {
+    // Make a request to the server to track the visit
+    if (window.location.pathname === '/Media' || window.location.pathname === '/' || window.location.pathname === '/Services' || window.location.pathname === '/Project/:id' || window.location.pathname === '/About' || window.location.pathname === '/Contact') {
+      usersVisited();
+    }
+  }, []);
 
   return (
     <div className='wrapper'>
       {loading && <Loader />}
       <BrowserRouter>
-        
+
         <Routes>
           <Route path='/' element={<><Navbar /><Home /><Footer /></>} />
           <Route path='/Services' element={<><Navbar /><Services /><Footer /></>} />
@@ -50,7 +52,7 @@ function App() {
           <Route path='/AdminProject' element={<ProtectedRoutes><AdminProject /></ProtectedRoutes>} />
           <Route path='/DetailProject' element={<ProtectedRoutes><ProjectDetail /></ProtectedRoutes>} />
           <Route path='/CategoryProject' element={<ProtectedRoutes><ProjectCategory /></ProtectedRoutes>} />
-          <Route path="*" element={<NotFoundPage/>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
       </BrowserRouter>

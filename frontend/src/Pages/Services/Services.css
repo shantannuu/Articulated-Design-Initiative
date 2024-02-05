@@ -295,6 +295,18 @@
     text-align: center;
     color: #f04949a7;
 }
+
+.text-desc-2{
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.text-desc-2 > p {
+    padding: initial !important;
+    margin: initial !important;
+    text-align: center !important;
+}
+
 @media only screen and (max-width:530px) {
     .card-all:nth-of-type(2n) {
         margin-top: initial;

@@ -36,8 +36,11 @@ function Gallary() {
     return (
         <div className='gallary-section'>
             <div className='gallary-h1'>
-                <h1>Elevate Your Perspective: Architectural Wonders Unveiled in Stunning Videos</h1>
-                <p>Embark on a visual odyssey with our exclusive architectural video showcase. Behold the grandeur of iconic structures, witness the evolution of design, and delve into the narratives behind each masterpiece. Immerse yourself in the fusion of creativity and engineering that defines our built landscape. Whether you're a design enthusiast or simply curious about the world around you, our curated videos promise to inspire, educate, and evoke a profound appreciation for the art of architecture. Welcome to a visual journey where every frame tells a story of innovation and elegance.</p>
+                <h1>Elegant Living: A Contemporary Oasis</h1>
+                <p>Step into the lap of luxury with our latest video showcasing a breathtaking living area. Immerse yourself in modern design, chic decor, and a harmonious blend of comfort and style. Discover how we've crafted an environment that seamlessly combines functionality with aesthetic appeal.</p>
+                <p>Walk through cozy corners, romantic decor, and personalized touches that create a haven for lovebirds. From subtle elegance to warm hues, this video captures the essence of creating a space that resonates with shared moments and cherished memories.</p>
+                <p>From playful themes to functional design, witness the magic unfold as we take you through spaces designed to inspire and nurture the young minds. Join us on a journey where every corner sparks joy and fosters endless possibilities.</p>
+                
                 {/* <div className='web-info'>
                     <div>
                         <h3>10 +</h3>

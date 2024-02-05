@@ -3,6 +3,7 @@ const app = express();
 app.use(express.json());
 require("dotenv").config();
 const morgan = require('morgan');
+app.set('trust proxy', 1);
 const cors = require('cors');
 const dbConfig = require("./config/dbConfig");
 app.use(cors());

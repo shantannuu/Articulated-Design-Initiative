@@ -95,6 +95,8 @@
 /* ********************************************************************************************************************** */
 .swiper{
     padding-bottom: 50px !important;
+    margin: 0 40px;
+
 }
 .swiper-slide{
     background-position: center;
@@ -134,7 +136,7 @@
     justify-content: space-between;
     /* flex-direction: row-reverse; */
     align-items: center;
-    padding: 50px;
+    padding:0 50px 50px 50px;
 }
 .service-category-content .service-category-content-h1 h1{
     font-size: 60px;
@@ -189,5 +191,8 @@
     .service-category-content .service-category-content-h1 h1{
         font-size: 3rem;
     }
+    .swiper{
+        margin: initial !important;
     
+    }
 }

@@ -46,7 +46,7 @@ section:last-child{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     overflow: hidden;
     cursor: pointer;
     border-radius: 5px;
@@ -129,7 +129,7 @@ section:last-child{
     margin-top: 10px;
 }
 
-.section-1 > div > h1{
+.section-1 > div > h1,.first-element h1{
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -172,9 +172,21 @@ section:last-child{
     grid-row: span 2;
     grid-column: span 5;
     padding: 10px;
+    height: 100%;
+    justify-content: space-between;
+    cursor:initial;
 }
 .Arch-Project-detail{
     position: relative;
+}
+
+.text-desc > p {
+    margin-bottom: 40px;
+    padding: 30px 0;
+}
+
+.text-desc-3{
+    justify-content: center !important;
 }
 
 .Arch-Project-detail h1{
@@ -252,6 +264,14 @@ section:last-child{
     padding: 30px;
 }
 
+.first-element,.second-element{
+    width: 100%;
+    color: #000000aa;
+    font-size: 0.9rem;
+}
+
+
+
 @media only screen and (max-width:530px) {
     .All-project-deatils{
         padding: 100px 5px 0 5px;
@@ -271,6 +291,18 @@ section:last-child{
     }
     .inside-hover-info h3 {
         font-size: 1.2rem !important;
+    }
+    .inside-hover-info{
+        padding: 0 20px !important;
+    }
+    .section-1 > div > h1{
+        font-size: 1.2rem;
+    }
+    .text-desc > p{
+        padding: 10px 0;
+    }
+    .first-element, .second-element{
+        font-size: 0.8rem;
     }
 }
 
