@@ -28,9 +28,9 @@ function App() {
 
   useEffect(() => {
     // Make a request to the server to track the visit
-    if (window.location.pathname === '/Media' || window.location.pathname === '/' || window.location.pathname === '/Services' || window.location.pathname === '/Project/:id' || window.location.pathname === '/About' || window.location.pathname === '/Contact') {
-      usersVisited();
-    }
+    // if (window.location.pathname === '/Media' || window.location.pathname === '/' || window.location.pathname === '/Services' || window.location.pathname === '/Project/:id' || window.location.pathname === '/About' || window.location.pathname === '/Contact') {
+    //   usersVisited();
+    // }
   }, []);
 
   return (
