@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef,useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -7,7 +7,56 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './News.css'
 import { Autoplay,Navigation } from 'swiper/modules';
+
+import { useDispatch } from 'react-redux';
+import { showLoadingWithDelay } from '../../redux/loaderSlice';
+import { GetAllMedias } from '../../Apicalls/MediaApi';
+import { getProjectById } from '../../Apicalls/ProjectApi';
 function News() {
+
+    const [data, setData] = useState([]);
+    const dispatch = useDispatch();
+
+    const getMedias = async () => {
+        try {
+            dispatch(showLoadingWithDelay(2000));
+            const response = await GetAllMedias();
+            dispatch(showLoadingWithDelay(2000));
+            if (response.success) {
+                const mediaIds = response.data.map(media => media.projectName);
+                const mediaNames = await fetchProjectNames(mediaIds);
+
+                // Update project data with category names
+                const mediasWithData = response.data.map((media, index) => ({
+                    ...media,
+                    projectName: mediaNames[index],
+                }));
+
+                console.log(mediasWithData)
+                setData(mediasWithData);
+                console.log(data[0].title)
+            } else {
+                console.log(response.message)
+            }
+        } catch (error) {
+            dispatch(showLoadingWithDelay(2000));
+            console.log(error.message);
+        }
+    }
+
+    const fetchProjectNames = async (mediaIds) => {
+        const promises = mediaIds.map(async (mediaId) => {
+            const response = await getProjectById(mediaId);
+            return response.success ? response.data.title : null;
+        });
+
+        return Promise.all(promises);
+    }
+
+    useEffect(() => {
+        getMedias();
+    }, []);
+
     return (
         <div className='new2-section'>
             <h1 className='new2-section-header'>What's New ?</h1>
@@ -16,76 +65,23 @@ function News() {
             delay: 2500,
             disableOnInteraction: false,
           }} navigation={true} modules={[Autoplay,Navigation]} className="mySwiper">
-            <SwiperSlide>
+          {data.map((newData1) =>  (<SwiperSlide>
                 <div className='new2-container'>
                         <div className='new2-image'>
-                            <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1706539532/Articulated-Design-Initiative/media/kbda-logo-nodate_rpaku0.png' />
+                            <img src={newData1.mediaImage} />
                         </div>
                         <div className='new2-content'>
                             <div className='new2-header'>
-                                <h1>Kohler Bold Design Awards</h1>
-                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                                <h1>{newData1.title}</h1>
+                                <h3>{newData1.projectName}</h3>
                             </div>
                             <div className='new2-footer'>
-                                <h3>Lanja Project</h3>
-                                <h3>21.09.2022</h3>
+                                <h3><a target="_blank" rel="noopener noreferrer" href={newData1.link}>Know More</a></h3>
+                                <h3>{newData1.publishDate.split('T')[0]}</h3>
                             </div>
                         </div>
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='new2-container'>
-                        <div className='new2-image'>
-                            <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575731/Articulated-Design-Initiative/media/t2hnpoprikmnsqbcl2bl.png' />
-                        </div>
-                        <div className='new2-content'>
-                            <div className='new2-header'>
-                                <h1>Good Homes India</h1>
-                                <h3><a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/p/Cib1jDJoWW4/'>Click here to Read more about BREEZY HOUSE Article on their official instagram account</a></h3>
-                            </div>
-                            <div className='new2-footer'>
-                                <h3>BREEZY HOUSE project</h3>
-                                <h3>13 sept 22</h3>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='new2-container'>
-                        <div className='new2-image'>
-                            <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575723/Articulated-Design-Initiative/media/pv7p6cixddaebbea8dpd.png' />
-                        </div>
-                        <div className='new2-content'>
-                            <div className='new2-header'>
-                                <h1>Arch Daily</h1>
-                                <h3><a target="_blank" rel="noopener noreferrer" href='https://www.archdaily.com/1007001/lanja-house-articulated-design-initiative-adi'>Click here to Read more about this Article on Arch Daily</a></h3>
-                            </div>
-                            <div className='new2-footer'>
-                                <h3>Lanja Project by Hana Abdel</h3>
-                                <h3>September 18, 2023</h3>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                <div className='new2-container'>
-                        <div className='new2-image'>
-                            <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575728/Articulated-Design-Initiative/media/pihzyufclfni8o3yjucw.png' />
-                        </div>
-                        <div className='new2-content'>
-                            <div className='new2-header'>
-                                <h1>Architectural Digest</h1>
-                                <h3><a target="_blank" rel="noopener noreferrer" href='https://www.architecturaldigest.in/story/this-1100-square-foot-maharashtra-home-embraces-simple-living-in-a-coastal-town/'>Click here to Read more about Lanja Project Article by Ashna Lulla</a></h3>
-                                <h3><a target="_blank" rel="noopener noreferrer" href='https://www.architecturaldigest.in/story/raw-materiality-creates-a-nostalgic-1350-square-foot-apartment-in-navi-mumbai-articulated-design-initiative/'>Click here to Read more about HOUSE OF FLAMBOYANCE Article by Rupali Sebastian</a></h3>
-                            </div>
-                            <div className='new2-footer'>
-                                <h3>Lanja Project By Ashna Lulla</h3>
-                                <h3>20 June 2023</h3>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                
+                </SwiperSlide>))}
                 
             </Swiper>
 

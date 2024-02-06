@@ -21,12 +21,14 @@ function AdminProject() {
 
     const [formData, setFormData] = useState({
         title: '',
+        area:'',
+        location:'',
+        photography: '',
         folderName:'projects',
         shortDescription: '',
         category: '',
         projectImage: null,
-        publishDate: '',
-        
+        publishDate: '',        
     });
 
     const handleInputChange = (e) => {
@@ -44,6 +46,9 @@ function AdminProject() {
         // Use FormData to handle file uploads
         const formDataWithFile = new FormData();
         formDataWithFile.append('title', formData.title);
+        formDataWithFile.append('area', formData.area);
+        formDataWithFile.append('location', formData.location);
+        formDataWithFile.append('photography', formData.photography);
         formDataWithFile.append('folderName', formData.folderName);
         formDataWithFile.append('shortDescription', formData.shortDescription);
         formDataWithFile.append('category', formData.category);
@@ -92,6 +97,15 @@ function AdminProject() {
                         <input type="text" id="shortDescription" name="shortDescription" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
                     </div>
 
+                    <div>
+                        <label for="area" class="block text-sm font-medium text-gray-700">Area</label>
+                        <input type="text" id="area" name="area" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
+                    </div>
+
+                    <div>
+                        <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
+                        <input type="text" id="location" name="location" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
+                    </div>
 
                     {/* <div>
                         <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
@@ -130,7 +144,10 @@ function AdminProject() {
                         <input type="date" id="publishDate" name="publishDate" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
                     </div>
 
-
+                    <div>
+                        <label for="photography" class="block text-sm font-medium text-gray-700">Photography By</label>
+                        <input type="text" id="photography" name="photography" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
+                    </div>
 
 
                     <div>

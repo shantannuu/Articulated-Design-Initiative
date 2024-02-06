@@ -12,10 +12,12 @@ app.use(morgan('combined'));
 const contactRoute = require("./Routes/contactRoutes")
 const adminRoute = require("./Routes/adminRoutes")
 const projectRoute = require("./Routes/projectRoutes")
+const mediaRoute = require("./Routes/mediaRoutes")
 const userRoute = require("./Routes/usersRoutes")
 app.use("/api", contactRoute);
 app.use("/api/admin", adminRoute);
 app.use("/api/project", projectRoute);
+app.use("/api/media", mediaRoute);
 app.use("/api/user",userRoute);
 
 
@@ -65,6 +67,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-// app.listen(port, '192.168.29.225' ,() => console.log(`Server is running on ${port}`));
+app.listen(port, '192.168.29.225' ,() => console.log(`Server is running on ${port}`));
 // app.listen(port, '172.20.10.4', () => console.log(`Server is running on ${port}`));
-app.listen(port, () => console.log(`Server is running on ${port}`));
+// app.listen(port, () => console.log(`Server is running on ${port}`));

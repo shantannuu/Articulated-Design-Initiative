@@ -211,7 +211,8 @@
 
     .section-1 .tall {
         /* grid-column: span 5 !important; */
-        grid-row: span 2 !important;
+        /* grid-row: span 2 !important; */
+        grid-row: span 15 !important;
     }
 
     .contact-home-section {

@@ -21,6 +21,7 @@ import NotFoundPage from './Pages/InvalidPage.js/InvalidPage';
 import AdminStat from './Pages/Admin/AdminStat';
 import Media from './Pages/Media/Media';
 import { usersVisited } from './Apicalls/UsersApi';
+import AdminMedia from './Pages/Admin/AdminMedia';
 function App() {
 
   const { loading } = useSelector((state) => state.loaders);
@@ -50,6 +51,7 @@ function App() {
           <Route path='/AdminContact' element={<ProtectedRoutes><AdminContactDetail /></ProtectedRoutes>} />
           <Route path='/AdminStat' element={<ProtectedRoutes><AdminStat /></ProtectedRoutes>} />
           <Route path='/AdminProject' element={<ProtectedRoutes><AdminProject /></ProtectedRoutes>} />
+          <Route path='/AdminMedia' element={<ProtectedRoutes><AdminMedia /></ProtectedRoutes>} />
           <Route path='/DetailProject' element={<ProtectedRoutes><ProjectDetail /></ProtectedRoutes>} />
           <Route path='/CategoryProject' element={<ProtectedRoutes><ProjectCategory /></ProtectedRoutes>} />
           <Route path="*" element={<NotFoundPage />} />

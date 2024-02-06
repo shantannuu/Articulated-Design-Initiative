@@ -16,9 +16,10 @@
 }
 
 .gallary-h1 p{
-   letter-spacing: 2px;
+   letter-spacing: 1px;
     color: #000;
     padding: 30px;
+    font-size: 1.1rem;
 }
 
 .project-gallary {

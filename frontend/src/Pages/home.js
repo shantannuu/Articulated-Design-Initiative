@@ -216,13 +216,13 @@ function Home() {
           </div>
           <div className='info_2'>
             <FontAwesomeIcon icon={faEnvelope} />
-            <h3>pmanali0193@gamil.com</h3>
-            <h3>AdityaB@gamil.com</h3>
+            <h3>manali@adinitiative.in</h3>
+            <h3>Aditya@adinitiative.in</h3>
           </div>
           <div className='info_3'>
             <FontAwesomeIcon icon={faLocationDot} />
 
-            <p>Sumati Sadan 5RPV+7G8 Liberty Garden Rd Number 1 Malad Navy Colony Mamledarwadi Malad West Mumbai Maharashtra 400064</p>
+            <p>Sumati Sadan Liberty Garden Rd Number 1 Malad West Mumbai Maharashtra 400064</p>
           </div>
         </div>
         <div className='footer-social-media'>
@@ -230,7 +230,7 @@ function Home() {
 
           <div className='footer-social-media-icon'>
             <a target="_blank" rel="noopener noreferrer" href='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA=='><FontAwesomeIcon icon={faInstagram} /></a>
-            <a target="_blank" rel="noopener noreferrer" href='https://wa.me/+918879864123'><FontAwesomeIcon icon={faWhatsapp} /></a>
+            <a target="_blank" rel="noopener noreferrer" href='https://wa.me/+917506030065'><FontAwesomeIcon icon={faWhatsapp} /></a>
             <FontAwesomeIcon icon={faLinkedin} />
           </div>
 

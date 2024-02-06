@@ -76,13 +76,13 @@ function Contact() {
                     </div>
                     <div className='info_2'>
                         <FontAwesomeIcon icon={faEnvelope} />
-                        <h3>AdityaB@gamil.com</h3>
-                        <h3>pmanali0193@gamil.com</h3>
+                        <h3>Aditya@adinitiative.in</h3>
+                        <h3>manali@adinitiative.in</h3>
                     </div>
                     <div className='info_3'>
                         <FontAwesomeIcon icon={faLocationDot} />
 
-                        <p>Sumati Sadan 5RPV+7G8 Liberty Garden Rd Number 1 Malad Navy Colony Mamledarwadi Malad West Mumbai Maharashtra 400064</p>
+                        <p>Sumati Sadan Liberty Garden Rd Number 1 Malad West Mumbai Maharashtra 400064</p>
                     </div>
                 </div>
                 <div className='contact-form'>

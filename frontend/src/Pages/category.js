@@ -97,7 +97,7 @@ function Category() {
                                     </div></> : <></>}
                                 <p>{obj.detailDescription1}</p>
                                 {index === 0 ? <><div className='second-element'>
-                                    <h3>Photography by {projectData.photography}</h3>
+                                    <h3>{projectData.photography === '' ? '' : `Photography by ${projectData.photography}`}</h3>
 
                                 </div></> : <></>}
 

@@ -16,22 +16,37 @@ router.post("/Contact", async (req, res) => {
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'shantanubolate@gmail.com',
-        pass: 'gjno avpr njyb gewq'
+        user: 'aditya@adinitiative.in',
+        pass: 'wfmv splp lxam dsko'
       }
     });
 
 
     var mailOptions = {
-      from: 'shantanubolate@gmail.com',
+      from: 'aditya@adinitiative.in',
       to: formData.email,
-      subject: 'Sending Email using Node.js',
-      text: `
-              Name: ${formData.name}
-              Email: ${formData.email}
-              Number: ${formData.number}
-              Message: ${formData.message}
-            `,
+      cc:'manali@adinitiative.in;aditya@adinitiative.in',
+      subject: 'Thank You for Your Inquiry at ADInitiative',
+      text: 
+      `
+
+      Dear ${formData.name},
+          
+      Thank you for reaching out to us
+      and expressing your interest
+              
+      Name: ${formData.name}
+      Email: ${formData.email}
+      Number: ${formData.number}
+      Message: ${formData.message}
+            
+      let us get back to you shortly !
+
+      Best Regards,
+      ADInitiative
+        
+            
+      `,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {

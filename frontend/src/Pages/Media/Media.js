@@ -1,16 +1,83 @@
 import React, { useEffect, useState } from 'react'
 
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { showLoadingWithDelay } from '../../redux/loaderSlice';
+
 import './Media.css'
+import { GetAllMedias } from '../../Apicalls/MediaApi';
+import { getProjectById } from '../../Apicalls/ProjectApi';
+
 function Media() {
-    const [activeTab, setActiveTab] = useState('section1');
+    const [activeTab, setActiveTab] = useState('section');
 
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
+
+    const [data, setData] = useState([]);
+    const dispatch = useDispatch();
+    const Navigate = useNavigate();
+
+    const getMedias = async () => {
+        try {
+            dispatch(showLoadingWithDelay(2000));
+            const response = await GetAllMedias();
+            dispatch(showLoadingWithDelay(2000));
+            if (response.success) {
+                const mediaIds = response.data.map(media => media.projectName);
+                const mediaNames = await fetchProjectNames(mediaIds);
+
+                // Update project data with category names
+                const mediasWithData = response.data.map((media, index) => ({
+                    ...media,
+                    projectName: mediaNames[index],
+                }));
+
+                console.log(mediasWithData)
+                setData(mediasWithData);
+                console.log(data[0].title)
+            } else {
+                console.log(response.message)
+            }
+        } catch (error) {
+            dispatch(showLoadingWithDelay(2000));
+            console.log(error.message);
+        }
+    }
+
+    const fetchProjectNames = async (mediaIds) => {
+        const promises = mediaIds.map(async (mediaId) => {
+            const response = await getProjectById(mediaId);
+            return response.success ? response.data.title : null;
+        });
+
+        return Promise.all(promises);
+    }
+
+    function removeDuplicates(arr, prop) {
+        const uniqueObjects = [];
+        const uniqueTitles = new Set();
+      
+        for (const obj of arr) {
+          if (!uniqueTitles.has(obj[prop])) {
+            uniqueTitles.add(obj[prop]);
+            uniqueObjects.push(obj);
+          }
+        }
+      
+        return uniqueObjects;
+      }
+
+      const newArray = removeDuplicates(data, 'title');
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        getMedias();
     }, []);
+
+
     return (
         <div className='mediaPage'>
             <div className='media-main-Page-Header'>
@@ -24,200 +91,70 @@ function Media() {
                     </div>
                     <button
 
-                        onClick={() => handleTabClick('section1')} className={activeTab === 'section1' ? 'active' : ''}>
-                        All
+                        onClick={() => handleTabClick('section')} className={activeTab === 'section' ? 'active' : ''}>
+                        All Articles
                     </button>
-                    <button
+                    {newArray.map((newData, index) => (<button
 
-                        onClick={() => handleTabClick('section2')} className={activeTab === 'section1' ? 'active' : ''}>
-                        KOHLER Bold Design Award
-                    </button>
-                    <button
+                        onClick={() => handleTabClick(`section${index + 1}`)} className={activeTab === `section${index + 1}` ? 'active' : ''}>
+                        {newData.title}
+                    </button>))
+                    }
 
-                        onClick={() => handleTabClick('section3')} className={activeTab === 'section2' ? 'active' : ''}>
-                        Architecture Digest</button>
-                    <button
-
-                        onClick={() => handleTabClick('section4')} className={activeTab === 'section3' ? 'active' : ''}>
-                        Arch Daily</button>
-                    <button
-
-                        onClick={() => handleTabClick('section5')} className={activeTab === 'section4' ? 'active' : ''}>
-
-                        Good Homes India
-                    </button>
                 </div>}
 
                 <div className="section-container">
-                    {activeTab === 'section1' && <>
+                    {activeTab === 'section' &&
+
                         <div className='award-section'>
                             {screenWidth > 530 && <h1 className='award-section-header'>Articles</h1>}
                             <div className='award-section-card-grid'>
-                                <div className='award-card' >
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707128588/Articulated-Design-Initiative/media/nice_w3b12d.jpg" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>21.09.2022</h3>
-                                        <h1>Lanja House</h1>
-                                        <div className='award-card-link'>
-                                            <h3>Building of the year 2024 Nominee</h3>
-                                            <h3>know more</h3>
+                                {data.map((newData) => (
+                                    <a target={newData.link === '' ? '' : "_blank"} rel={newData.link === '' ? '' : "noopener noreferrer"} href={newData.link} className='award-card' >
+                                        <div className='award-card-img'>
+                                            <img src={newData.mediaImage} />
                                         </div>
+                                        <div className='award-card-content'>
+                                            <h3>{newData.publishDate.split('T')[0]}</h3>
+                                            <h1>{newData.projectName}</h1>
+                                            <div className='award-card-link'>
+                                                <h3>{newData.title}</h3>
+                                                <h3>know more</h3>
+                                            </div>
 
-                                    </div>
-                                </div>
-                                <div className='award-card' >
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1706539532/Articulated-Design-Initiative/media/kbda-logo-nodate_rpaku0.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>21.09.2022</h3>
-                                        <h1>Lanja House</h1>
-                                        <div className='award-card-link'>
-                                            <h3>KOHLER Bold Design Award</h3>
-                                            <h3>know more</h3>
                                         </div>
+                                    </a>
 
-                                    </div>
+                                ))
+                                }
+                            </div>
+                        </div>
+                    }
+                    {newArray.map((newData, index) => (
+                        activeTab === `section${index + 1}` && <>
+                            <div className='award-section'>
+                                <h1 className='award-section-header'>{newData.title}</h1>
+                                <div className='award-section-card-grid'>
+                                    {data.map((newData1) => newData.title === newData1.title ? (
+                                        <a target="_blank" rel="noopener noreferrer" href={newData.link} className='award-card' >
+                                            <div className='award-card-img'>
+                                                <img src={newData1.mediaImage} />
+                                            </div>
+                                            <div className='award-card-content'>
+                                                <h3>{newData1.publishDate.split('T')[0]}</h3>
+                                                <h1>{newData1.projectName}</h1>
+                                                <div className='award-card-link'>
+                                                    <h3>{newData1.title}</h3>
+                                                    <h3>know more</h3>
+                                                </div>
+                                            </div>
+                                        </a>) : <></>)}
                                 </div>
-                                <div className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575731/Articulated-Design-Initiative/media/t2hnpoprikmnsqbcl2bl.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>13.09.2022</h3>
-                                        <h1>Breezy House</h1>
-                                        <div className='award-card-link'>
-                                            <h3>Good Homes Magzine</h3>
-                                            <h3>know more</h3>
-                                        </div>
+                            </div>
+                        </>
 
-                                    </div>
-                                </div>
-                                <div className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575723/Articulated-Design-Initiative/media/pv7p6cixddaebbea8dpd.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>18.09.2023</h3>
-                                        <h1>Lanja House</h1>
-                                        <div className='award-card-link'>
-                                            <h3>Arch Daily</h3>
-                                            <h3>know more</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href='https://www.architecturaldigest.in/story/this-1100-square-foot-maharashtra-home-embraces-simple-living-in-a-coastal-town/' target="_blank" rel="noopener noreferrer" className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575728/Articulated-Design-Initiative/media/pihzyufclfni8o3yjucw.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>20.06.2022</h3>
-                                        <h1>Lanja House</h1>
-                                        <div className='award-card-link'>
-                                            <h3>Architectural Digest</h3>
-                                            <h3>know More</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575728/Articulated-Design-Initiative/media/pihzyufclfni8o3yjucw.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>18.01.2024</h3>
-                                        <h1>House Of Flamboyance</h1>
-                                        <div className='award-card-link'>
-                                            <h3>Architectural Digest</h3>
-                                            <h3>know more</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </>}
-                    {activeTab === 'section2' && <>
-                        <div className='award-section'>
-                            <h1 className='award-section-header'>Awards</h1>
-                            <div className='award-section-card-grid'>
-                                <div className='award-card' >
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1706539532/Articulated-Design-Initiative/media/kbda-logo-nodate_rpaku0.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>2023</h3>
-                                        {/* <h1>Wooden Imperial</h1> */}
-                                        <h3>KOHLER Bold Design Award</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </>}
-                    {activeTab === 'section3' && <>
-                        <div className='award-section'>
-                            <h1 className='award-section-header'>Awards</h1>
-                            <div className='award-section-card-grid'>
-                                <div className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575723/Articulated-Design-Initiative/media/pv7p6cixddaebbea8dpd.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>2023</h3>
-                                        {/* <h1>Head Board</h1> */}
-                                        <h3>Arch Daily</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </>}
-                    {activeTab === 'section4' && <>
-                        <div className='award-section'>
-                            <h1 className='award-section-header'>Awards</h1>
-                            <div className='award-section-card-grid'>
-                                <div className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575728/Articulated-Design-Initiative/media/pihzyufclfni8o3yjucw.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>2023</h3>
-                                        {/* <h1>Head Board</h1> */}
-                                        <h3>Architectural Digest</h3>
-                                    </div>
-                                </div>
-                                <div className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575728/Articulated-Design-Initiative/media/pihzyufclfni8o3yjucw.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>18.01.2024</h3>
-                                        <h1>House Of Flamboyance</h1>
-                                        <div className='award-card-link'>
-                                            <h3>Architectural Digest</h3>
-                                            <h3>know more</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </>}
-                    {activeTab === 'section5' && <>
-                        <div className='award-section'>
-                            <h1 className='award-section-header'>Awards</h1>
-                            <div className='award-section-card-grid'>
-                                <div className='award-card'>
-                                    <div className='award-card-img'>
-                                        <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703575731/Articulated-Design-Initiative/media/t2hnpoprikmnsqbcl2bl.png" />
-                                    </div>
-                                    <div className='award-card-content'>
-                                        <h3>2023</h3>
-                                        {/* <h1>Head Board</h1> */}
-                                        <h3>Good Homes Magzine</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </>}
+                    ))
+                    }
                 </div>
             </div>
         </div>

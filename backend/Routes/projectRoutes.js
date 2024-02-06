@@ -46,6 +46,9 @@ router.post("/post-project", authMiddleware, upload.single('projectImage'), asyn
 
         const project = new Project({
             title: req.body.title,
+            area: req.body.area,
+            location:req.body.location,
+            photography:req.body.photography,
             shortDescription: req.body.shortDescription,
             category: req.body.category,
             details: [],

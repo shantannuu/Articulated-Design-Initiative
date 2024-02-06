@@ -73,6 +73,11 @@ function ProtectedRoutes({ children }) {
                                     Project Category Form
                                 </Link>
                             </li>
+                            <li class="mb-2">
+                                <Link to="/AdminMedia" class="flex items-center p-4">
+                                    Media Form
+                                </Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>

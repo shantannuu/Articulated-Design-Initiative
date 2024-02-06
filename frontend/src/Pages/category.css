@@ -280,10 +280,14 @@ section:last-child{
         padding: 5px;
     }
     .section-1{
-        grid-auto-rows: 300px ;
+        /* grid-auto-rows: 300px ; */
+        grid-auto-rows: 20px
+    }
+    .section-1 .wide{
+        grid-row: span 10 !important;
     }
     .text-desc p{
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
         text-align: center;
     }
     .inside-hover-info p {
@@ -293,7 +297,7 @@ section:last-child{
         font-size: 1.2rem !important;
     }
     .inside-hover-info{
-        padding: 0 20px !important;
+        padding: 0 14px !important;
     }
     .section-1 > div > h1{
         font-size: 1.2rem;
@@ -302,7 +306,16 @@ section:last-child{
         padding: 10px 0;
     }
     .first-element, .second-element{
-        font-size: 0.8rem;
+        font-size: 1rem !important;
+        
+        text-align: center;
+    }
+    .section-1 > div > h1, .first-element h1{
+        font-size: 1.3rem !important;
+        text-align: center;
+    }
+    .section-1 .medium,.section-1 .big {
+        grid-row: span 10 !important;
     }
 }
 
@@ -314,6 +327,10 @@ section:last-child{
     .section-1 .medium,.section-1 .big,.section-1 .wide,.section-1 .text-desc,.section-1 .tall{
         grid-column: auto;
         grid-row: auto;
+    }
+    .section-1 .text-desc{
+        /* grid-row:span 2!important; */
+        grid-row: span 13!important;
     }
     .inside-hover-info h3{
         font-size: 9px;
@@ -340,6 +357,7 @@ section:last-child{
     }
     .text-desc p{
         font-size: 12px;
+        margin: initial !important;
     }
 
     .tab{

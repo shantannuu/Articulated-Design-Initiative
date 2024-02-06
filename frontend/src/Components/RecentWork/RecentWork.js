@@ -88,7 +88,7 @@ function RecentWork() {
                     <div className='work-card-content'>
                       <h3>{newData.categoryName}</h3>
                       <h1>{newData.title}</h1>
-                      <h3>{newData.shortDescription === "" ? '' : `${truncateText(newData.shortDescription, 20)}...`}</h3>
+                      <h3>{newData.shortDescription === "" ? '' : `${truncateText(newData.shortDescription, 15)}...`}</h3>
 
                     </div>
                   </div>
@@ -115,7 +115,7 @@ function RecentWork() {
                 <div className='work-card-content'>
                   <h3>{newData.categoryName}</h3>
                   <h1>{newData.title}</h1>
-                  <h3>{newData.shortDescription === "" ? '' : `${truncateText(newData.shortDescription, 20)}...`}</h3>
+                  <h3>{newData.shortDescription === "" ? '' : `${truncateText(newData.shortDescription, 15)}...`}</h3>
 
                 </div>
               </div>)))}

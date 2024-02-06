@@ -71,13 +71,12 @@ function Category2() {
         <SwiperSlide style={{ backgroundImage: `url(${AllCategoryImage})` }}>
           <div className="slide-content">
             <h1>All</h1>
-            <p>10 Projects</p>
+            
           </div>
           </SwiperSlide>
         {categories.map(newCategory => (<SwiperSlide style={{ backgroundImage: `url(${newCategory.categoryImage})` }}>
           <div className="slide-content">
             <h1>{newCategory.name}</h1>
-            <p>10 Projects</p>
           </div>
 
         </SwiperSlide>))}

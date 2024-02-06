@@ -15,12 +15,12 @@ function Footer() {
                     <h1>Quick links</h1>
                     <div className='footer-links'>
                         <div>
-                            <h3><Link to="" >Kolhar Award</Link></h3>
+                            <h3><a target="_blank" rel="noopener noreferrer" href='https://www.kbda.asia/over-the-year-2022/#nominees2'>Kolhar Award</a></h3>
                             <h3><Link to="/Contact" >Contact</Link></h3>
                         </div>
                         <div>
                             <h3><Link to="/About" >About</Link></h3>
-                            <h3><Link to="" >Blogs</Link></h3>
+                            <h3><Link to="/Media" >Media</Link></h3>
                         </div>
 
 
@@ -32,13 +32,13 @@ function Footer() {
                     <h1>Reach us</h1>
                     <div className='footer-contact-options'>
                         <div>
-                            <h3><span><FontAwesomeIcon icon={faPhone} /></span>  +91 8879864123</h3>
-                            <h3><span><FontAwesomeIcon icon={faEnvelope} /></span>  shantanubolate@gmail.com</h3>
+                            <h3><span><FontAwesomeIcon icon={faPhone} /></span>  +91 9823641608</h3>
+                            <h3><span><FontAwesomeIcon icon={faEnvelope} /></span>  Aditya@adinitiative.in</h3>
                         </div>
 
                         <div className='footer-address'>
                             <p><span><FontAwesomeIcon icon={faLocationDot} /></span>  Sumati Sadan
-                                5RPV+7G8 Liberty Garden Rd Number 1 Malad Navy Colony Mamledarwadi Malad West Mumbai Maharashtra 400064</p>
+                                 Liberty Garden Rd Number 1 Malad West Mumbai Maharashtra 400064</p>
                         </div>
                     </div>
 
