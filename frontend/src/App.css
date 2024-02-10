@@ -8,7 +8,7 @@
     font-family: 'Didact Gothic', sans-serif;
     -webkit-transition-duration: .2s;
     -webkit-transition-timing-function: ease-in-out;
-    /* user-select: none; */
+    user-select: none;
 }
 
 .wrapper {

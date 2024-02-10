@@ -27,11 +27,11 @@ function App() {
   
   const { loading } = useSelector((state) => state.loaders);
 
-  // useEffect(() => {
-  //   document.addEventListener('contextmenu', function (e) {
-  //     e.preventDefault();
-  //   });
-  // }, []);
+  useEffect(() => {
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  }, []);
 
   return (
     <div className='wrapper'>
