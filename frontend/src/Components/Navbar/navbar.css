@@ -126,7 +126,7 @@ nav .nav-menu ul li .menu-link{
     .header nav .burger-btn{
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         cursor: pointer;
         background: transparent;
         border: none;
@@ -134,7 +134,7 @@ nav .nav-menu ul li .menu-link{
         color : #fff ;
         font-size: 1.7rem;
         transition: opacity .2s transform .4s;
-        
+        width: 60px;
     }
     
     .header .nav-menu {

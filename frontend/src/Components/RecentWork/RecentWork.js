@@ -83,7 +83,7 @@ function RecentWork() {
                 <SwiperSlide>
                   <div className='work-card' onClick={() => { Navigate(`/Project/${newData._id}`); }}>
                     <div className='work-card-img'>
-                      <img src={newData.projectImage} />
+                      <img className='no-interaction' src={newData.projectImage} />
                     </div>
                     <div className='work-card-content'>
                       <h3>{newData.categoryName}</h3>
@@ -110,7 +110,7 @@ function RecentWork() {
             (
               index < 5 && (<div className='work-card' onClick={() => { Navigate(`/Project/${newData._id}`); }}>
                 <div className='work-card-img'>
-                  <img src={newData.projectImage} />
+                  <img className='no-interaction' src={newData.projectImage} />
                 </div>
                 <div className='work-card-content'>
                   <h3>{newData.categoryName}</h3>

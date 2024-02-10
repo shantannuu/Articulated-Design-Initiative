@@ -181,7 +181,7 @@ section:last-child{
 }
 
 .text-desc > p {
-    margin-bottom: 40px;
+    /* margin-bottom: 20px; */
     padding: 30px 0;
 }
 

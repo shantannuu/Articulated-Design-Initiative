@@ -57,12 +57,16 @@ function Category() {
 
                 <div className='All-project-deatils'>
 
-                    {projectData.details.map((obj, index) => (
-                        <section class="section-1">
+                    {projectData.details.map((obj, index) => {
+                        const inputDate = new Date(projectData.publishDate);
+                        const day = inputDate.getDate().toString().padStart(2, '0');
+                        const month = (inputDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+                        const year = inputDate.getFullYear();
+                        return (<section class="section-1">
 
                             <div class="wide reveal" onClick={() => openModal(obj.wideImage.image)}>
                                 <div class="content">
-                                    <img src={obj.wideImage.image} alt="" />
+                                    <img className='no-interaction' src={obj.wideImage.image} alt="" />
 
                                     {/* <div class="hover-info">
                                         <div class="inside-hover-info">
@@ -76,7 +80,7 @@ function Category() {
                             </div>
                             <div class="tall reveal" onClick={() => openModal(obj.tallImage.image)}>
                                 <div class="content">
-                                    <img src={obj.tallImage.image} alt="" />
+                                    <img className='no-interaction' src={obj.tallImage.image} alt="" />
                                     {/* <div class="hover-info">
                                         <div class="inside-hover-info">
                                             <h3>Lanja House</h3>
@@ -87,18 +91,21 @@ function Category() {
                                     </div> */}
                                 </div>
                             </div>
-                            <div className={ index === 0 ? "text-desc reveal" : "text-desc text-desc-3 reveal" } >
+                            <div className={index === 0 ? "text-desc reveal" : "text-desc text-desc-3 reveal"} >
                                 {index === 0 ? <>
                                     <div className='first-element'>
                                         <h1>{projectData.title}</h1>
-                                        <h3>Location : {projectData.location}</h3>
-                                        <h3>Area : {projectData.area}</h3>
-                                        <h3>Completion : {projectData.publishDate.split('T')[0]}</h3>
+                                        <h3>Location: {projectData.location}</h3>
+                                        <h3>Area: {projectData.area}</h3>
+
+
+                                        <h3>Status: {projectData.publishDate === '' ? 'On Going' : `Completion on ${day}-${month}-${year}`}</h3>
                                     </div></> : <></>}
                                 <p>{obj.detailDescription1}</p>
                                 {index === 0 ? <><div className='second-element'>
                                     <h3>{projectData.photography === '' ? '' : `Photography by ${projectData.photography}`}</h3>
-
+                                    <h3>{projectData.descriptionBy === '' ? '' : `Description By: ${projectData.descriptionBy}`}</h3>
+                                    <h3>{projectData.artWorkBy === '' ? '' : `Art Work By: ${projectData.artWorkBy}`}</h3>
                                 </div></> : <></>}
 
 
@@ -106,7 +113,7 @@ function Category() {
                             </div>
                             <div class="medium reveal" onClick={() => openModal(obj.mediumImage1.image)}>
                                 <div class="content">
-                                    <img src={obj.mediumImage1.image} alt="" />
+                                    <img className='no-interaction' src={obj.mediumImage1.image} alt="" />
                                     {/* <div class="hover-info">
                                         <div class="inside-hover-info">
                                             <h3>Lanja House</h3>
@@ -119,7 +126,7 @@ function Category() {
                             </div>
                             <div class="big reveal" onClick={() => openModal(obj.largeImage.image)}>
                                 <div class="content">
-                                    <img src={obj.largeImage.image} alt="" />
+                                    <img className='no-interaction' src={obj.largeImage.image} alt="" />
                                     {/* <div class="hover-info">
                                         <div class="inside-hover-info">
                                             <h3>Lanja House</h3>
@@ -132,7 +139,7 @@ function Category() {
                             </div>
                             <div class="medium reveal" onClick={() => openModal(obj.mediumImage2.image)}>
                                 <div class="content">
-                                    <img src={obj.mediumImage2.image} alt="" />
+                                    <img className='no-interaction' src={obj.mediumImage2.image} alt="" />
                                     {/* <div class="hover-info">
                                         <div class="inside-hover-info">
                                             <h3>Lanja House</h3>
@@ -147,8 +154,8 @@ function Category() {
                                 <p>{obj.detailDescription2}</p>
                             </div>
 
-                        </section>
-                    ))}
+                        </section>)
+                    })}
 
 
                 </div>

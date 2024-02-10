@@ -68,7 +68,7 @@ function News() {
           {data.map((newData1) =>  (<SwiperSlide>
                 <div className='new2-container'>
                         <div className='new2-image'>
-                            <img src={newData1.mediaImage} />
+                            <img className='no-interaction' src={newData1.mediaImage} />
                         </div>
                         <div className='new2-content'>
                             <div className='new2-header'>

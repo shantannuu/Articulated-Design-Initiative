@@ -24,6 +24,8 @@ function AdminProject() {
         area:'',
         location:'',
         photography: '',
+        artWorkBy:'',
+        descriptionBy:'',
         folderName:'projects',
         shortDescription: '',
         category: '',
@@ -42,13 +44,14 @@ function AdminProject() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData.title);
         // Use FormData to handle file uploads
         const formDataWithFile = new FormData();
         formDataWithFile.append('title', formData.title);
         formDataWithFile.append('area', formData.area);
         formDataWithFile.append('location', formData.location);
         formDataWithFile.append('photography', formData.photography);
+        formDataWithFile.append('artWorkBy', formData.artWorkBy);
+        formDataWithFile.append('descriptionBy', formData.descriptionBy);
         formDataWithFile.append('folderName', formData.folderName);
         formDataWithFile.append('shortDescription', formData.shortDescription);
         formDataWithFile.append('category', formData.category);
@@ -105,6 +108,16 @@ function AdminProject() {
                     <div>
                         <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
                         <input type="text" id="location" name="location" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
+                    </div>
+
+                    <div>
+                        <label for="descriptionBy" class="block text-sm font-medium text-gray-700">Description By</label>
+                        <input type="text" id="descriptionBy" name="descriptionBy" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
+                    </div>
+
+                    <div>
+                        <label for="artWorkBy" class="block text-sm font-medium text-gray-700">Art Work By</label>
+                        <input type="text" id="artWorkBy" name="artWorkBy" class="mt-1 p-2 w-full border rounded-lg" onChange={handleInputChange} />
                     </div>
 
                     {/* <div>

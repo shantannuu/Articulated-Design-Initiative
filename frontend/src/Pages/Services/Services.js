@@ -108,26 +108,26 @@ function Services() {
                 <div
                   class="tall reveal">
                   <div class="content">
-                    <img src={element.details[0].tallImage.image} alt="" />
-                    {element.details[0].detailDescription2 === '' ? <></> : <div class="hover-info">
+                    <img className='no-interaction' src={element.details[0].tallImage.image} alt="" />
+                    {/* {element.details[0].detailDescription2 === '' ? <></> : <div class="hover-info">
                       <div class="inside-hover-info">
                         <p>{truncateText(element.details[0].detailDescription2,20)}...</p>
                       </div>
                     </div>
-                    }
+                    } */}
                   </div>
                 </div>
                 <div
 
                   class="wide reveal">
                   <div class="content">
-                    <img src={element.details[0].wideImage.image} alt="" />
-                    { element.details[1] && (element.details[1].detailDescription1 === '' ? <></> : <div class="hover-info">
+                    <img className='no-interaction' src={element.details[0].wideImage.image} alt="" />
+                    {/* { element.details[1] && (element.details[1].detailDescription1 === '' ? <></> : <div class="hover-info">
                       <div class="inside-hover-info">
                         <p>{element.details[1] && element.details[1].detailDescription1 ? `${truncateText(element.details[1].detailDescription1,20)}...` : ''}</p>
                       </div>
                     </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
 
@@ -136,13 +136,13 @@ function Services() {
 
                   class="medium reveal">
                   <div class="content">
-                    <img src={element.details[0].mediumImage1.image} alt="" />
-                   { element.details[1] && (element.details[1].detailDescription2 === '' ? <></> : <div class="hover-info">
+                    <img className='no-interaction' src={element.details[0].mediumImage1.image} alt="" />
+                   {/* { element.details[1] && (element.details[1].detailDescription2 === '' ? <></> : <div class="hover-info">
                       <div class="inside-hover-info">
                         <p>{element.details[1] && element.details[1].detailDescription2 ? `${truncateText(element.details[1].detailDescription2,20)}...` : ''}</p>
                       </div>
                     </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
                 <div
@@ -168,22 +168,22 @@ function Services() {
 
                 <div class="wide reveal">
                   <div class="content">
-                    <img src={element.details[0].wideImage.image} alt="" />
-                    {element.details[0].detailDescription2 === '' ? <></> : <div class="hover-info">
+                    <img className='no-interaction' src={element.details[0].wideImage.image} alt="" />
+                    {/* {element.details[0].detailDescription2 === '' ? <></> : <div class="hover-info">
                       <div class="inside-hover-info">
                         <p>{truncateText(element.details[0].detailDescription2,20)}...</p>
                       </div>
-                    </div>}
+                    </div>} */}
                   </div>
                 </div>
                 <div class="tall reveal">
                   <div class="content">
-                    <img src={element.details[0].tallImage.image} alt="" />
-                    {element.details[1] && (element.details[1].detailDescription1 === '' ? <></> : <div class="hover-info">
+                    <img className='no-interaction' src={element.details[0].tallImage.image} alt="" />
+                    {/* {element.details[1] && (element.details[1].detailDescription1 === '' ? <></> : <div class="hover-info">
                       <div class="inside-hover-info">
                         <p>{element.details[1] && element.details[1].detailDescription1 ? `${truncateText(element.details[1].detailDescription1,20)}...` : ''}</p>
                       </div>
-                    </div>)}
+                    </div>)} */}
                   </div>
                 </div>
                 <div class="text-desc text-desc-2 reveal">
@@ -195,12 +195,12 @@ function Services() {
                 </div>
                 <div class="medium reveal">
                   <div class="content">
-                    <img src={element.details[0].mediumImage1.image} alt="" />
-                    {element.details[1] && (element.details[1].detailDescription2 === '' ? <></> : <div class="hover-info">
+                    <img className='no-interaction' src={element.details[0].mediumImage1.image} alt="" />
+                    {/* {element.details[1] && (element.details[1].detailDescription2 === '' ? <></> : <div class="hover-info">
                       <div class="inside-hover-info">
                         <p>{element.details[1] && element.details[1].detailDescription2 ? `${truncateText(element.details[1].detailDescription2,20)}...` : ''}</p>
                       </div>
-                    </div>)}
+                    </div>)} */}
                   </div>
                 </div>
 

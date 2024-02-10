@@ -82,8 +82,8 @@ function Home() {
 
         <div className="img-box" style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163114/Articulated-Design-Initiative/ParallaxBanner/d0dpopmahogqwk60lpxc.jpg)` }}>
           <div className="content-container">
-            <h1 className='firstH1'>House Of</h1>
-            <h1>Flamboyance</h1>
+            { screenWidth <= 530 ? <><h1 className='firstH1'>House Of </h1><h1>Flamboyance</h1></> : <h1>House Of Flamboyance</h1> }
+            
 
           </div>
           <Link class="img-box-link" to='/Project/659272b856222613482da180' >Know More</Link>
@@ -105,47 +105,47 @@ function Home() {
           <Link class="img-box-link" to='/Project/65c0eebf0b0ca20418192ce7' >Know More</Link>
         </div>
 
-        
+
 
       </div>
       <RecentWork />
 
-      { screenWidth <= 530 ? 
-        ' '  : <Gallary/> 
-      
-      
-      } 
-      
+      {screenWidth <= 530 ?
+        ' ' : <Gallary />
 
-      
 
-     { screenWidth > 530 && <div className='All-project-deatils1'>
+      }
+
+
+
+
+      {screenWidth > 530 && <div className='All-project-deatils1'>
         <section class="section-1">
 
           <div class="wide reveal">
             <div class="content">
-              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998922/Articulated-Design-Initiative/projects/Lanja%20House/bcllgcrleructiw5js4l.jpg" alt="" />
-              <div class="hover-info">
+              <img  src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702999179/Articulated-Design-Initiative/projects/Lanja%20House/n2j0cy1gchk3iquafh18.jpg" alt="" />
+              {/* <div class="hover-info">
                 <div class="inside-hover-info">
-                  {/* <h3>Lanja House</h3> */}
-                  {/* <h4>Structure</h4> */}
+                  <h3>Lanja House</h3>
+                  <h4>Structure</h4>
                   <p>The house has an east-west orientation. The main entrance of the house leads you to a spacious living area, with clearstory windows along the eastern side that provide abundant morning sunlight. Large window openings with high ceilings enable cross-ventilation and make the house appear spacious.</p>
-                  {/* <a href="#">Read More</a> */}
+                  <a href="#">Read More</a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div class="tall reveal">
             <div class="content">
-              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998927/Articulated-Design-Initiative/projects/Lanja%20House/ceyzsasskqosoqoz6ujn.jpg" alt="" />
-              <div class="hover-info">
+              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707464525/Articulated-Design-Initiative/projects/Lanja%20House/05_dplszw.jpg" alt="" />
+              {/* <div class="hover-info">
                 <div class="inside-hover-info">
-                  {/* <h3>Lanja House</h3> */}
-                  {/* <h4>Structure</h4> */}
+                  <h3>Lanja House</h3>
+                  <h4>Structure</h4>
                   <p>The simplicity of the house is accentuated by the contemporary implementation of the traditional materials. The exposed laterite finish sets a very natural backdrop, and being sustainably conscious The Kitchen and dining area are positioned in the East, and benefit from the morning light coming in</p>
-                  {/* <a href="#">Read More</a> */}
+                  <a href="#">Read More</a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div class="text-desc text-desc-2 reveal">
@@ -155,37 +155,37 @@ function Home() {
           </div>
           <div class="medium reveal">
             <div class="content">
-              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702998924/Articulated-Design-Initiative/projects/Lanja%20House/ztyewafheei7kdcabttf.jpg" alt="" />
-              <div class="hover-info">
+              <img src="https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707464725/Articulated-Design-Initiative/projects/Lanja%20House/02_pbeft4.jpg" alt="" />
+              {/* <div class="hover-info">
                 <div class="inside-hover-info">
-                  {/* <h3>Lanja House</h3> */}
-                  {/* <h4>Structure</h4> */}
+                  <h3>Lanja House</h3>
+                  <h4>Structure</h4>
                   <p>At the core of the design concept was sustainable living and construction. The bungalow was built with a composite load-bearing construction technique that uses a laterite stone foundation minimising damage to the fertile red soil native to the region. The home balances natural light, sloped Mangalore-tiled roofs, exposed laterite walls, and rough Kota stone flooring drawing on a palette of indigenous materials.</p>
-                  {/* <a href="#">Read More</a> */}
+                  <a href="#">Read More</a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
         </section>
-      </div> }
+      </div>}
 
       <About />
-      
+
       <Category2 />
       {/* <Awards/> */}
-      { screenWidth <= 530 && 
-      <News /> 
-       } 
+      {screenWidth <= 530 &&
+        <News />
+      }
       {/* <Blob/> */}
       <div className='contact-home-section'>
         <div className='contact-home-header'>
           <h1>Contact Us</h1>
-          { screenWidth <= 530 && <h3>Any question or remarks? Just write us a message!</h3>}
+          {screenWidth <= 530 && <h3>Any question or remarks? Just write us a message!</h3>}
         </div>
 
         <div className='contact-home-form'>
-        
+
           {formResponse && (<div className='message-response'>
             <h1>{formResponse}</h1>
           </div>)}
@@ -206,18 +206,20 @@ function Home() {
         </div>
         <div className='contact-header' style={{ margin: '50px 0' }}>
           <h1>You may also find us at</h1>
-          { screenWidth > 530 && <h3>Any question or remarks? Just write us a message!</h3> }
+          {screenWidth > 530 && <h3>Any question or remarks? Just write us a message!</h3>}
         </div>
         <div className='contact-info' style={{ padding: '0 250px' }}>
           <div className='info_1'>
             <FontAwesomeIcon icon={faPhone} />
-            <h3>+91 7506030065</h3>
-            <h3>+91 9823641608</h3>
+           { screenWidth <= 530 ? <><h3><a href='tel:+91 7506030065'>+91 7506030065</a></h3>
+            <h3><a href='tel:+91 9823641608'>+91 9823641608</a></h3></> : <><h3>+91 7506030065</h3>
+            <h3>+91 9823641608</h3></> }
           </div>
           <div className='info_2'>
             <FontAwesomeIcon icon={faEnvelope} />
-            <h3>manali@adinitiative.in</h3>
-            <h3>Aditya@adinitiative.in</h3>
+            <h3><a href='mailto:manali@adinitiative.in'>manali@adinitiative.in</a></h3>
+            <h3><a href='mailto:Aditya@adinitiative.in'>Aditya@adinitiative.in</a></h3>
+
           </div>
           <div className='info_3'>
             <FontAwesomeIcon icon={faLocationDot} />
@@ -230,7 +232,9 @@ function Home() {
 
           <div className='footer-social-media-icon'>
             <a target="_blank" rel="noopener noreferrer" href='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA=='><FontAwesomeIcon icon={faInstagram} /></a>
-            <a target="_blank" rel="noopener noreferrer" href='https://wa.me/+917506030065'><FontAwesomeIcon icon={faWhatsapp} /></a>
+            <a 
+            // target="_blank" rel="noopener noreferrer" href='https://wa.me/+917506030065'
+            ><FontAwesomeIcon icon={faWhatsapp} /></a>
             <FontAwesomeIcon icon={faLinkedin} />
           </div>
 

@@ -29,10 +29,10 @@
     background-color: #fff;
 }
 .tab-btn-container button{
-    padding: 15px 30px;
+    padding: 15px 10px;
     background: #fff;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     gap: 10px;
     border-bottom: 1px solid #00000039;
@@ -52,7 +52,7 @@
 .tab-btn-header h3{
     font-size: 1.2rem;
     text-transform: uppercase;
-    padding: 15px 30px;
+    padding: 15px 10px;
     
 }
 

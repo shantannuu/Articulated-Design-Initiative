@@ -23,15 +23,15 @@ import Media from './Pages/Media/Media';
 import { usersVisited } from './Apicalls/UsersApi';
 import AdminMedia from './Pages/Admin/AdminMedia';
 function App() {
-
+  
+  
   const { loading } = useSelector((state) => state.loaders);
 
-  useEffect(() => {
-    // Make a request to the server to track the visit
-    // if (window.location.pathname === '/Media' || window.location.pathname === '/' || window.location.pathname === '/Services' || window.location.pathname === '/Project/:id' || window.location.pathname === '/About' || window.location.pathname === '/Contact') {
-    //   usersVisited();
-    // }
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener('contextmenu', function (e) {
+  //     e.preventDefault();
+  //   });
+  // }, []);
 
   return (
     <div className='wrapper'>

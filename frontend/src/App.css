@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,12 +6,19 @@
     /* font-family: 'Spectral', serif; */
     /* font-family: 'Futura', sans-serif; */
     font-family: 'Didact Gothic', sans-serif;
-    -webkit-transition-duration:.2s;
+    -webkit-transition-duration: .2s;
     -webkit-transition-timing-function: ease-in-out;
-    
+    /* user-select: none; */
 }
 
-.wrapper{
+.wrapper {
     position: relative;
     width: 100%;
+}
+
+@media only screen and (max-width:530px) {
+    .no-interaction {
+        pointer-events: none;
+    }
+
 }

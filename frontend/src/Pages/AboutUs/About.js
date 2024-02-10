@@ -17,7 +17,7 @@ function About() {
             <p className='About-main-page-section-p'><FontAwesomeIcon icon={faQuoteLeft} />  As a practice we always believe in the art of space making with emphasis on spatial experiences in the core <FontAwesomeIcon icon={faQuoteRight} /></p>
             <div className='About-main-page-container'>
                 <div className='About-main-page-images'>
-                    <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702909175/dmy1lg2xv7uascyinzug.png' />
+                    <img className='no-interaction' src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702909175/dmy1lg2xv7uascyinzug.png' />
                 </div>
                 <div className='About-main-page-content'>
                     <div className='About-main-page-header'>
@@ -40,7 +40,7 @@ function About() {
             </div>
             <div className='About-main-page-container'>
                 <div className='About-main-page-images'>
-                    <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702909203/rwhgb4guwzu2ziuofv8j.png' />
+                    <img className='no-interaction' src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1702909203/rwhgb4guwzu2ziuofv8j.png' />
                 </div>
                 <div className='About-main-page-content'>
                     <div className='About-main-page-header'>

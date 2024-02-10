@@ -138,7 +138,7 @@ function Media() {
                                     {data.map((newData1) => newData.title === newData1.title ? (
                                         <a target="_blank" rel="noopener noreferrer" href={newData.link} className='award-card' >
                                             <div className='award-card-img'>
-                                                <img src={newData1.mediaImage} />
+                                                <img className='no-interaction' src={newData1.mediaImage} />
                                             </div>
                                             <div className='award-card-content'>
                                                 <h3>{newData1.publishDate.split('T')[0]}</h3>

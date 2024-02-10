@@ -50,7 +50,7 @@ function Contact() {
 
     const styles = {
         backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703216198/Articulated-Design-Initiative/ContactUs/dhuqrhsylfpnptb9lham.jpg)`
-      };
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -70,14 +70,15 @@ function Contact() {
                 <div className='contact-info'>
                     <div className='info_1'>
                         <FontAwesomeIcon icon={faPhone} />
-                        <h3>+91 9823641608</h3>
-                        <h3>+91 7506030065</h3>
-                        
+                        {screenWidth <= 530 ? <><h3><a href='tel:+91 7506030065'>+91 7506030065</a></h3>
+                            <h3><a href='tel:+91 9823641608'>+91 9823641608</a></h3></> : <><h3>+91 7506030065</h3>
+                            <h3>+91 9823641608</h3></>}
+
                     </div>
                     <div className='info_2'>
                         <FontAwesomeIcon icon={faEnvelope} />
-                        <h3>Aditya@adinitiative.in</h3>
-                        <h3>manali@adinitiative.in</h3>
+                        <h3><a href='mailto:manali@adinitiative.in'>manali@adinitiative.in</a></h3>
+                        <h3><a href='mailto:Aditya@adinitiative.in'>Aditya@adinitiative.in</a></h3>
                     </div>
                     <div className='info_3'>
                         <FontAwesomeIcon icon={faLocationDot} />
@@ -91,7 +92,7 @@ function Contact() {
 
 
 
-                            <input type='text'  name='name' id='name' value={formData.name} className='input-form' placeholder='Your Name' onChange={handleInputChange} />
+                            <input type='text' name='name' id='name' value={formData.name} className='input-form' placeholder='Your Name' onChange={handleInputChange} />
                             <input type='text' name='email' id='email' value={formData.email} className='input-form' placeholder='Your Email' onChange={handleInputChange} />
                             <input type='text' name='number' id='number' value={formData.number} className='input-form' placeholder='Your Number' onChange={handleInputChange} />
                         </div>
@@ -103,9 +104,9 @@ function Contact() {
                 </div>
 
             </div>
-            <div className='gooogle-map-location' style={ screenWidth <= 530 ? {backgroundImage:'none'} : styles  }>
+            <div className='gooogle-map-location' style={screenWidth <= 530 ? { backgroundImage: 'none' } : styles}>
 
-                <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.2185154843364!2d72.83895597921715!3d19.185655935737127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b75150c62a55%3A0xef68a5276a6b0074!2sSumati%20Sadan!5e0!3m2!1sen!2sin!4v1702466832744!5m2!1sen!2sin" width="700px" height="500px" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe className='map no-interaction' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.2185154843364!2d72.83895597921715!3d19.185655935737127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b75150c62a55%3A0xef68a5276a6b0074!2sSumati%20Sadan!5e0!3m2!1sen!2sin!4v1702466832744!5m2!1sen!2sin" width="700px" height="500px" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div className='map-content'>
                     <h1>Find us on google maps</h1>
                     <h3>Thank you for connecting with us</h3>

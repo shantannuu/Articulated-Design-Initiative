@@ -41,7 +41,7 @@
     height: 100vh;
     width: 1170px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: center;
     padding: 0 15px;
@@ -49,13 +49,13 @@
 }
 
 .content-container h1 {
-    font-size: 7em;
-    letter-spacing: 4px;
+    font-size: 3em;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: #ffffffc9;
     color: #fff;
     font-weight: bold;
-    opacity: 0.7;
+    opacity: 0.8;
+    margin-bottom: 65px;
 }
 
 .text-desc .text-desc-link {
@@ -274,6 +274,10 @@
     }
     .input-form-home{
         border-radius: 5px;
+    }
+    .contact-home-header h1{
+        font-weight: 600;
+        letter-spacing: 2px;
     }
 }
 

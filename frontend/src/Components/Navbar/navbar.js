@@ -34,27 +34,27 @@ function Navbar() {
 		}
 	}
 
-	
-	
+
+
 
 	window.addEventListener('scroll', changeValueScroll);
 	useEffect(() => {
-		
-		if(burger === false){
+
+		if (burger === false) {
 			setBurger(!burger);
 
 			navRef.current.classList.toggle('responsive-nav')
 		}
-	},[window.location.pathname])
+	}, [window.location.pathname])
 
-	
+
 
 	return (
 		<div className={state ? 'header black' : 'header'}>
 			<nav className='header-container'>
 				<div className="logo" onClick={handleHomeClick}>
 					<svg xmlns="http://www.w3.org/2000/svg"
-						viewBox={ screenWidth <= 530 ? "525 380 500 500" : "425 425 400 400"}  >
+						viewBox={screenWidth <= 530 ? "525 380 500 500" : "425 425 400 400"}  >
 						<path fill="#0000" opacity="1" stroke="none"
 							d="
 M690.000000,1242.000000 
@@ -1210,7 +1210,7 @@ z"/>
 
 				</div>
 
-				<div ref={navRef} className='nav-menu' onClick={ !burger ? handleMenu : undefined }>
+				<div ref={navRef} className='nav-menu' onClick={!burger ? handleMenu : undefined}>
 					<ul>
 						<li><Link to='/About' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>About</Link></li>
 						<li><Link to='/Services' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>Projects</Link></li>
@@ -1218,12 +1218,13 @@ z"/>
 						<li><Link to='/Contact' className='menu-link' style={{ color: screenWidth <= 530 ? 'white' : isHomePage ? 'white' : '#94a090' }}>Contact</Link></li>
 					</ul>
 				</div>
-				<div className='social-media-header' style={{ color: isHomePage ? 'white' : '#94a090' }}>
+				{screenWidth > 530 ? <div className='social-media-header' style={{ color: isHomePage ? 'white' : '#94a090' }}>
 					<Link className='social-media-icons' target="_blank" to='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA==' rel="noopener noreferrer"><i class="fab fa-brands fa-instagram"></i></Link>
 
-					<Link className='social-media-icons' target="_blank" to='https://wa.me/+917506030065' ><i class="fab fa-brands fa-whatsapp" rel="noopener noreferrer"></i></Link>
-				</div>
-				<div className="burger-btn" onClick={handleMenu} style={{ color: isHomePage ? 'white' : state ? 'white' : '#94a090',fontSize:"20px" }}>
+					{/* <Link className='social-media-icons' target="_blank" to='https://wa.me/+917506030065' ><i class="fab fa-brands fa-whatsapp" rel="noopener noreferrer"></i></Link> */}
+				</div> : <></>}
+				<div className="burger-btn" onClick={handleMenu} style={{ color: isHomePage ? 'white' : state ? 'white' : '#94a090', fontSize: "20px" }}>
+					<Link className='social-media-icons' target="_blank" to='https://instagram.com/adinitiative.in?igshid=OGQ5ZDc2ODk2ZA==' rel="noopener noreferrer"><i class="fab fa-brands fa-instagram"></i></Link>
 					{burger ? <FaBars /> : <FaTimes />}
 				</div>
 			</nav>

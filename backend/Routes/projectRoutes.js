@@ -36,7 +36,7 @@ const upload = multer({ storage: storage });
 
 router.post("/post-project", authMiddleware, upload.single('projectImage'), async (req, res) => {
     try {
-
+        console.log("hello")
 
         if (!req.file) {
             return res.status(400).json({ success: false, message: 'No file uploaded' });
@@ -48,6 +48,8 @@ router.post("/post-project", authMiddleware, upload.single('projectImage'), asyn
             title: req.body.title,
             area: req.body.area,
             location:req.body.location,
+            artWorkBy:req.body.artWorkBy,
+            descriptionBy:req.body.descriptionBy,
             photography:req.body.photography,
             shortDescription: req.body.shortDescription,
             category: req.body.category,

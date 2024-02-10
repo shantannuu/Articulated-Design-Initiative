@@ -19,7 +19,7 @@ function About() {
                 </div>
 
                 <div className='about-img'>
-                    <img src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703161224/Articulated-Design-Initiative/AboutUs/fm9wateuklkigvanzexe.jpg' />
+                    <img className='no-interaction' src='https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703161224/Articulated-Design-Initiative/AboutUs/fm9wateuklkigvanzexe.jpg' />
                 </div>
             </div>
         </div>

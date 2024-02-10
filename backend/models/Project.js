@@ -55,10 +55,16 @@ const projectSchema = new mongoose.Schema({
     title: {
         type: String,
     },
+    area :{
+        type: String,
+    },
     location: {
         type: String,
     },
-    area :{
+    artWorkBy:{
+        type: String,
+    },
+    descriptionBy:{
         type: String,
     },
     photography:{
