@@ -91,7 +91,7 @@ function Home() {
 
         <div className="img-box" style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1705589966/Articulated-Design-Initiative/projects/Chembur%20House/bkfuqttkkiiy1yr2ya4s.jpg)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703163118/Articulated-Design-Initiative/ParallaxBanner/kw5poe6dzybdmhhx8og4.jpg)` }}>
           <div className="content-container">
-            <h1>Breezy House</h1>
+            <h1>16, Chembur House</h1>
 
           </div>
           <Link class="img-box-link" to='/Project/65a93cd00665e138bfbe749a' >Know More</Link>
@@ -99,7 +99,7 @@ function Home() {
 
         <div className="img-box" style={screenWidth <= 530 ? { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707143640/Articulated-Design-Initiative/projects/House%20with%20Terraces/olntrvbfi3gzumroucpx.png)`, backgroundAttachment: 'initial' } : { backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707143640/Articulated-Design-Initiative/projects/House%20with%20Terraces/olntrvbfi3gzumroucpx.png)` }}>
           <div className="content-container">
-            <h1>House Of Terrace</h1>
+            <h1>43, Terrace</h1>
 
           </div>
           <Link class="img-box-link" to='/Project/65c0eebf0b0ca20418192ce7' >Know More</Link>

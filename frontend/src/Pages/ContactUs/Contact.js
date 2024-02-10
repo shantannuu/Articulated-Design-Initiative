@@ -49,7 +49,7 @@ function Contact() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     const styles = {
-        backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1703216198/Articulated-Design-Initiative/ContactUs/dhuqrhsylfpnptb9lham.jpg)`
+        backgroundImage: `url(https://res.cloudinary.com/dyhf9rqfz/image/upload/v1707563612/Articulated-Design-Initiative/ContactUs/sid-saxena-tsXADt9ldio-unsplash_czuwqn.jpg)`
     };
 
     useEffect(() => {

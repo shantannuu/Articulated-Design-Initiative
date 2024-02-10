@@ -17,7 +17,7 @@
 }
 
 .footer-container>.footer-logo {
-    width: 15%;
+    width: 17%;
     height: 25%;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .Copy-right {
-    padding: 10px 60px;
+    padding: 10px 45px;
     width: 100%;
     color: #94a090;
     display: flex;

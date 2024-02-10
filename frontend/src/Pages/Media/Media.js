@@ -82,7 +82,7 @@ function Media() {
         <div className='mediaPage'>
             <div className='media-main-Page-Header'>
 
-                Recent Posts
+                Recently Published
             </div>
             <div className='news-tab-section-container'>
                 {screenWidth > 530 && <div className="tab-btn-container">

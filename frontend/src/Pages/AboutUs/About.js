@@ -44,7 +44,7 @@ function About() {
                 </div>
                 <div className='About-main-page-content'>
                     <div className='About-main-page-header'>
-                        <h1 className='About-main-page-section-h1'>Manali P.</h1>
+                        <h1 className='About-main-page-section-h1'>Manali Patil</h1>
                         <h3>Creative Head</h3>
                     </div>
                     <div className='About-main-page-para'>
